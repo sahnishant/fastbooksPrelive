@@ -1,0 +1,24 @@
+---
+import { site, buildWhatsAppUrl } from "../data/site";
+const source = Astro.props.source ?? "Header";
+---
+
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Fastbooks home">
+    <span class="brand-mark">F</span>
+    <span>
+      <strong>{site.name}</strong>
+      <small>{site.tagline}</small>
+    </span>
+  </a>
+
+  <nav class="nav-links" aria-label="Main navigation">
+    {site.nav.map((item) => (
+      <a href={item.href}>{item.label}</a>
+    ))}
+  </nav>
+
+  <a href={buildWhatsAppUrl(`${source} Header`)} class="button button-primary" target="_blank" rel="noopener noreferrer">
+    Request Early Access
+  </a>
+</header>

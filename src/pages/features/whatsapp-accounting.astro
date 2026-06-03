@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+
+const title = "WhatsApp Accounting App for Indian Businesses | Fastbooks";
+const description = "Fastbooks helps Indian businesses prepare accounts entries from WhatsApp-style voice notes, bill photos, receipts and bank transaction text for review.";
+---
+
+<BaseLayout title={title} description={description} source="WhatsApp Accounting">
+  <PageHero
+    eyebrow="WhatsApp accounting"
+    title="Prepare accounts entries from WhatsApp-style daily business inputs."
+    subtitle="Send a voice note, bill photo, receipt or bank transaction text. Fastbooks prepares a draft accounting entry for review."
+    source="WhatsApp Accounting"
+    secondaryHref="/features/gst-accounting-software/"
+    secondaryLabel="See GST review"
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">Phone-first accounts capture</p><h2>For teams that do business on phone but accounts on desktop.</h2></div>
+    <div class="card-grid">
+      <article class="card"><h3>Voice notes</h3><p>Capture amount, party, payment mode and narration while context is fresh.</p></article>
+      <article class="card"><h3>Bill photos</h3><p>Preserve invoice and purchase details before paper bills disappear.</p></article>
+      <article class="card"><h3>Review inbox</h3><p>Accountants verify the entry instead of chasing missing context later.</p></article>
+    </div>
+  </div></section>
+
+  <WhatsAppCTA source="WhatsApp Accounting" />
+</BaseLayout>

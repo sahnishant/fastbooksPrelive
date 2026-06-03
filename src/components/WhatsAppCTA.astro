@@ -1,0 +1,90 @@
+---
+import { site, buildWhatsAppUrl } from "../data/site";
+
+const source = Astro.props.source ?? "Fastbooks Page";
+const directUrl = buildWhatsAppUrl(source);
+const idSuffix = source.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "page";
+---
+
+<section id="signup" class="cta-band">
+  <h2>Want early access to Fastbooks?</h2>
+  <p>Click once to message us on WhatsApp. You do not need to fill anything first.</p>
+
+  <a class="button button-primary" href={directUrl} target="_blank" rel="noopener noreferrer">
+    Request Early Access
+  </a>
+
+  <div class="form-divider">Optional details</div>
+
+  <form class="form-box" data-waitlist-form>
+    <input type="hidden" name="source" value={source} />
+
+    <div class="form-group">
+      <label for={`name-${idSuffix}`}>Name <span style="text-transform:none; color:#64748b;">optional</span></label>
+      <input id={`name-${idSuffix}`} name="name" type="text" class="form-control" placeholder="Your name" />
+    </div>
+
+    <div class="form-group">
+      <label for={`company-${idSuffix}`}>Company <span style="text-transform:none; color:#64748b;">optional</span></label>
+      <input id={`company-${idSuffix}`} name="company" type="text" class="form-control" placeholder="Your business or firm name" />
+    </div>
+
+    <div class="form-group">
+      <label for={`phone-${idSuffix}`}>Mobile Number <span style="text-transform:none; color:#64748b;">optional</span></label>
+      <input id={`phone-${idSuffix}`} name="phone" type="tel" class="form-control" placeholder="e.g., +91 98765 43210" />
+    </div>
+
+    <div class="form-group">
+      <label for={`email-${idSuffix}`}>Email ID <span style="text-transform:none; color:#64748b;">optional</span></label>
+      <input id={`email-${idSuffix}`} name="email" type="email" class="form-control" placeholder="you@example.com" />
+    </div>
+
+    <div class="form-group">
+      <label for={`need-${idSuffix}`}>What do you want from Fastbooks? <span style="text-transform:none; color:#64748b;">optional</span></label>
+      <textarea id={`need-${idSuffix}`} name="need" class="form-control" rows="3" placeholder="e.g., reduce purchase entry, bank entries, GST review, sales bills..."></textarea>
+    </div>
+
+    <button type="submit" class="form-submit">Request Early Access</button>
+    <span class="form-note">All fields are optional. The message opens directly in WhatsApp.</span>
+  </form>
+</section>
+
+<script define:vars={{ ownerWhatsAppNumber: site.ownerWhatsAppNumber }}>
+  function openFastbooksWhatsApp(message) {
+    const url = "https://wa.me/" + ownerWhatsAppNumber + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+
+  document.querySelectorAll("[data-waitlist-form]").forEach((form) => {
+    if (form.dataset.bound === "true") return;
+    form.dataset.bound = "true";
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = form.querySelector("[name='name']")?.value.trim() || "";
+      const company = form.querySelector("[name='company']")?.value.trim() || "";
+      const phone = form.querySelector("[name='phone']")?.value.trim() || "";
+      const email = form.querySelector("[name='email']")?.value.trim() || "";
+      const need = form.querySelector("[name='need']")?.value.trim() || "";
+      const source = form.querySelector("[name='source']")?.value || document.title;
+
+      const lines = [
+        "Hi, I want early access to Fastbooks.",
+        "",
+        "Page: " + source
+      ];
+
+      if (name) lines.push("Name: " + name);
+      if (company) lines.push("Company: " + company);
+      if (phone) lines.push("Mobile number: " + phone);
+      if (email) lines.push("Email: " + email);
+      if (need) lines.push("I want help with: " + need);
+
+      lines.push("");
+      lines.push("Please contact me.");
+
+      openFastbooksWhatsApp(lines.join("\n"));
+    });
+  });
+</script>

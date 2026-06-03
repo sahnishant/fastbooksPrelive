@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+
+const title = "Accounting Software for Accountants and CA Offices | Fastbooks";
+const description = "Fastbooks helps accountants and CA offices reduce manual accounts entry work by collecting client bills, bank transactions and voice notes into review-ready drafts.";
+---
+
+<BaseLayout title={title} description={description} source="Accounting Software for Accountants">
+  <PageHero
+    eyebrow="For accountants and CA offices"
+    title="Let clients capture daily accounts context before it gets lost."
+    subtitle="Fastbooks helps accountants receive cleaner draft entries from client bills, voice notes, receipts and bank transaction text. You stay in control before final posting."
+    source="Accounting Software for Accountants"
+    secondaryHref="/alternatives/tally-prime/"
+    secondaryLabel="See Tally workflow page"
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">Accountant workflow</p><h2>Reduce typing. Increase review quality.</h2></div>
+    <div class="card-grid">
+      <article class="card"><h3>Client-side capture</h3><p>Clients can send transaction context as it happens instead of forwarding messy bundles later.</p></article>
+      <article class="card"><h3>Review-ready drafts</h3><p>Fastbooks prepares party, amount, ledger hint, narration and GST clues for your review.</p></article>
+      <article class="card"><h3>Control retained</h3><p>The accountant decides what is correct before entries are finalized.</p></article>
+    </div>
+  </div></section>
+
+  <WhatsAppCTA source="Accounting Software for Accountants" />
+</BaseLayout>

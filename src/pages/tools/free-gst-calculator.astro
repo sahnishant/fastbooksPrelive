@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+
+const title = "Free GST Calculator Online India | Fastbooks";
+const description = "Use the free GST calculator to estimate taxable value, GST amount, CGST, SGST and invoice total. Built by Fastbooks for Indian businesses.";
+---
+
+<BaseLayout title={title} description={description} source="Free GST Calculator" pageType="WebApplication">
+  <section class="section page-hero">
+    <p class="eyebrow">Free business tool</p>
+    <h1>Free online GST calculator for India.</h1>
+    <p class="page-subtitle">Calculate GST amount, taxable value, invoice total, CGST and SGST. This tool is for quick estimates; your accountant should verify final GST treatment.</p>
+  </section>
+
+  <section class="section-soft"><div class="inner">
+    <div class="calculator">
+      <div class="calc-grid">
+        <div class="form-group">
+          <label for="gst-amount">Amount</label>
+          <input id="gst-amount" class="form-control" type="number" min="0" step="0.01" value="1000" data-gst-amount />
+        </div>
+
+        <div class="form-group">
+          <label for="gst-rate">GST Rate</label>
+          <select id="gst-rate" class="form-control" data-gst-rate>
+            <option value="0">0%</option>
+            <option value="5">5%</option>
+            <option value="12">12%</option>
+            <option value="18" selected>18%</option>
+            <option value="28">28%</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="gst-mode">Amount Type</label>
+          <select id="gst-mode" class="form-control" data-gst-mode>
+            <option value="exclusive" selected>GST Exclusive</option>
+            <option value="inclusive">GST Inclusive</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="calc-result" aria-live="polite">
+        <div class="result-line"><span>Taxable value</span><strong data-gst-taxable>₹0</strong></div>
+        <div class="result-line"><span>Total GST</span><strong data-gst-tax>₹0</strong></div>
+        <div class="result-line"><span>CGST estimate</span><strong data-gst-cgst>₹0</strong></div>
+        <div class="result-line"><span>SGST estimate</span><strong data-gst-sgst>₹0</strong></div>
+        <div class="result-line"><span>Invoice total</span><strong data-gst-total>₹0</strong></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading"><p class="eyebrow">Why this matters</p><h2>GST calculation is only one part of accounts work.</h2><p>Fastbooks is being built to help prepare the full accounting entry around the transaction: party, amount, ledger hint, narration and GST review status.</p></div>
+    <div class="card-grid">
+      <article class="card"><h3>Sales bills</h3><p>Estimate GST and prepare sales entry details for review.</p></article>
+      <article class="card"><h3>Purchase bills</h3><p>Capture vendor bill details and GST hints before approval.</p></article>
+      <article class="card"><h3>Accountant review</h3><p>Keep final tax treatment under human review.</p></article>
+    </div>
+  </section>
+
+  <WhatsAppCTA source="Free GST Calculator" />
+
+  <script>
+    const amount = document.querySelector("[data-gst-amount]");
+    const rate = document.querySelector("[data-gst-rate]");
+    const mode = document.querySelector("[data-gst-mode]");
+    const taxable = document.querySelector("[data-gst-taxable]");
+    const gst = document.querySelector("[data-gst-tax]");
+    const total = document.querySelector("[data-gst-total]");
+    const cgst = document.querySelector("[data-gst-cgst]");
+    const sgst = document.querySelector("[data-gst-sgst]");
+
+    function formatINR(value) {
+      return new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 2
+      }).format(Number.isFinite(value) ? value : 0);
+    }
+
+    function calculate() {
+      const rawAmount = parseFloat(amount?.value || "0");
+      const gstRate = parseFloat(rate?.value || "0") / 100;
+      let taxableValue = 0;
+      let gstValue = 0;
+      let totalValue = 0;
+
+      if (mode?.value === "inclusive") {
+        totalValue = rawAmount;
+        taxableValue = rawAmount / (1 + gstRate);
+        gstValue = totalValue - taxableValue;
+      } else {
+        taxableValue = rawAmount;
+        gstValue = taxableValue * gstRate;
+        totalValue = taxableValue + gstValue;
+      }
+
+      if (taxable) taxable.textContent = formatINR(taxableValue);
+      if (gst) gst.textContent = formatINR(gstValue);
+      if (total) total.textContent = formatINR(totalValue);
+      if (cgst) cgst.textContent = formatINR(gstValue / 2);
+      if (sgst) sgst.textContent = formatINR(gstValue / 2);
+    }
+
+    [amount, rate, mode].forEach((el) => {
+      if (!el) return;
+      el.addEventListener("input", calculate);
+      el.addEventListener("change", calculate);
+    });
+
+    calculate();
+  </script>
+</BaseLayout>

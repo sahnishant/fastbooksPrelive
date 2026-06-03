@@ -1,0 +1,69 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+import { buildWhatsAppUrl } from "../../data/site";
+
+const title = "Most Used Accounting Software in India | Fastbooks";
+const description = "A practical guide to widely used accounting software in India and how Fastbooks differs by focusing on daily accounts entry preparation.";
+const names = ["TallyPrime", "Vyapar", "Zoho Books", "myBillBook", "Busy", "Marg ERP", "Refrens", "ProfitBooks", "ClearTax", "Fastbooks"];
+---
+
+<BaseLayout title={title} description={description} source="Most Used Accounting Software India">
+  <section class="section page-hero">
+    <p class="eyebrow">Most used accounting software</p>
+    <h1>Most used accounting software in India: what each type is really used for.</h1>
+    <p class="page-subtitle">Popularity alone does not decide the right accounting software. The real question is whether the tool fits your daily accounts workflow: billing, GST, inventory, bank entries, accountant review or manual-entry reduction.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href={buildWhatsAppUrl("Most Used Accounting Software India Hero")} target="_blank" rel="noopener noreferrer">Request Early Access</a>
+      <a class="button button-secondary" href="/resources/best-accounting-software-india/">Best accounting software guide</a>
+    </div>
+  </section>
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Market map</p>
+      <h2>The Indian accounting market has different software categories.</h2>
+      <p>Do not compare every tool as if it solves the same job. Some are accountant-first, some are billing-first, some are compliance-first, and Fastbooks is capture-and-review-first.</p>
+    </div>
+
+    <div class="card-grid">
+      <article class="card"><h3>Accountant-first</h3><p>Tools with deep statutory accounting workflows and strong accountant adoption.</p></article>
+      <article class="card"><h3>Billing-first</h3><p>Tools focused on GST invoices, payments, inventory and small business billing.</p></article>
+      <article class="card"><h3>Cloud-first</h3><p>Tools focused on browser/mobile access, reports and integrations.</p></article>
+      <article class="card"><h3>Compliance-first</h3><p>Tools focused on GST, tax filing, reconciliation and statutory workflows.</p></article>
+      <article class="card"><h3>Inventory-first</h3><p>Tools built for retailers, wholesalers, pharma, FMCG and distribution businesses.</p></article>
+      <article class="card"><h3>Capture-first</h3><p>Fastbooks focuses on turning bills, bank rows and voice notes into review-ready entries.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading"><p class="eyebrow">Software list</p><h2>Commonly considered accounting software in India.</h2></div>
+    <table class="comparison-table">
+      <thead><tr><th>Software</th><th>Typical reason businesses consider it</th><th>Fastbooks comparison angle</th></tr></thead>
+      <tbody>
+        {names.map((name) => (
+          <tr>
+            <td><strong>{name}</strong></td>
+            <td>{name === "Fastbooks" ? "Reducing daily accounts entry preparation from everyday inputs." : "Known in the Indian accounting, billing, GST or business software market."}</td>
+            <td>{name === "Fastbooks" ? "Capture-first workflow with accountant review." : "Fastbooks can be positioned as a daily capture and entry-preparation layer, not a blind replacement claim."}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">How to evaluate</p><h2>Ask these questions before choosing.</h2></div>
+    <div class="card-grid">
+      <article class="card"><h3>Who will use it daily?</h3><p>Owner, billing staff, accountant, CA office or field team?</p></article>
+      <article class="card"><h3>What is the daily input?</h3><p>Bills, receipts, bank statement rows, invoices, inventory movement or voice notes?</p></article>
+      <article class="card"><h3>What must be reviewed?</h3><p>GST, ledger mapping, party matching, narration and bank reconciliation are high-trust areas.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading"><p class="eyebrow">Fastbooks positioning</p><h2>Do not fire your accounting system. Fire the manual entry backlog.</h2><p>Fastbooks is best positioned as a preparation layer that helps Indian businesses and accountants capture work faster, prepare entries, and review before anything becomes final.</p></div>
+  </section>
+
+  <WhatsAppCTA source="Most Used Accounting Software India" />
+</BaseLayout>

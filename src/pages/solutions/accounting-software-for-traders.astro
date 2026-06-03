@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+
+const title = "Accounting Software for Traders and Wholesalers | Fastbooks";
+const description = "Fastbooks helps traders, wholesalers and retail businesses prepare sales, purchase, expense and bank entries from bills, receipts and voice notes for accountant review.";
+---
+
+<BaseLayout title={title} description={description} source="Accounting Software for Traders">
+  <PageHero
+    eyebrow="Trade and wholesale accounts"
+    title="Accounting software for traders, wholesalers and retail businesses."
+    subtitle="Fastbooks helps trading businesses capture sales, purchase bills, daily expenses, bank receipts and outstanding follow-ups without typing every accounts entry from scratch."
+    source="Accounting Software for Traders"
+    secondaryHref="/features/bank-reconciliation-software/"
+    secondaryLabel="See bank entry workflow"
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">Trader workflows</p><h2>Designed for the accounts work traders repeat.</h2></div>
+    <div class="card-grid">
+      <article class="card"><h3>Sales and collections</h3><p>Prepare sales and receipt entries with party and invoice match suggestions.</p></article>
+      <article class="card"><h3>Purchase bills</h3><p>Capture supplier bills and tax hints for review before posting.</p></article>
+      <article class="card"><h3>Outstanding follow-up</h3><p>See who needs payment reminders and which receipts may clear pending invoices.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading"><p class="eyebrow">Example</p><h2>From bank text to receipt entry.</h2></div>
+    <div class="preview-card">
+      <div class="input-card"><span class="tag">Bank statement</span><p>“NEFT RECEIVED SHARMA TRADERS HDFC ₹85,000”</p></div>
+      <div class="mock-table">
+        <div class="mock-row mock-head"><span>Entry</span><span>Party</span><span>Amount</span><span>Action</span></div>
+        <div class="mock-row"><strong>Receipt</strong><span>Sharma Traders</span><span>₹85,000</span><span class="badge badge-yellow">Review match</span></div>
+      </div>
+    </div>
+  </section>
+
+  <WhatsAppCTA source="Accounting Software for Traders" />
+</BaseLayout>

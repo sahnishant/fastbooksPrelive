@@ -1,0 +1,85 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import { site } from "../data/site";
+
+const {
+  title = site.defaultTitle,
+  description = site.defaultDescription,
+  canonical,
+  source = title,
+  pageType = "WebPage"
+} = Astro.props;
+
+const canonicalUrl = canonical ? new URL(canonical, site.url).href : new URL(Astro.url.pathname, site.url).href;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${site.url}/#organization`,
+      "name": site.name,
+      "url": site.url
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      "url": site.url,
+      "name": site.name,
+      "publisher": { "@id": `${site.url}/#organization` }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${site.url}/#software`,
+      "name": site.name,
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": site.url,
+      "description": site.defaultDescription,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/PreOrder"
+      }
+    },
+    {
+      "@type": pageType,
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": title,
+      "description": description,
+      "isPartOf": { "@id": `${site.url}/#website` },
+      "about": { "@id": `${site.url}/#software` }
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="theme-color" content="#0f172a" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body id="top">
+    <Header source={source} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

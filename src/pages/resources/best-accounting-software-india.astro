@@ -1,0 +1,111 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+import { buildWhatsAppUrl } from "../../data/site";
+
+const title = "Best Accounting Software in India for Small Businesses | Fastbooks";
+const description = "Compare accounting software in India for small businesses, traders and accountants. Learn how to choose between TallyPrime, Zoho Books, Vyapar, myBillBook and Fastbooks.";
+const tools = [
+  ["TallyPrime", "Established accounting and compliance workflows", "Businesses and accountants who want a familiar statutory accounting system"],
+  ["Zoho Books", "Cloud accounting, invoicing and reports", "Businesses that prefer cloud-first finance software"],
+  ["Vyapar", "Billing, inventory and small business workflows", "Retailers and small businesses that need simple billing"],
+  ["myBillBook", "GST billing, inventory and business-owner accounting", "Indian MSMEs looking for easy billing and accounts"],
+  ["Busy", "Inventory-heavy accounting", "Trading and distribution businesses"],
+  ["Marg ERP", "ERP-style billing, inventory and GST", "Retail, wholesale and sector-specific businesses"],
+  ["Refrens", "Cloud invoicing and accounting", "Agencies, service businesses and SMEs"],
+  ["ProfitBooks", "Invoicing and basic accounting", "Small businesses moving from spreadsheets"],
+  ["ClearTax", "Tax and GST compliance workflows", "GST-heavy compliance users"],
+  ["Fastbooks", "Accounts entry preparation from bills, bank rows and voice notes", "Businesses and accountants who want to reduce manual entry"]
+];
+---
+
+<BaseLayout title={title} description={description} source="Best Accounting Software India">
+  <section class="section page-hero">
+    <p class="eyebrow">Accounting software guide</p>
+    <h1>Best accounting software in India for small businesses.</h1>
+    <p class="page-subtitle">The best accounting software is not the same for every Indian business. Some teams need statutory compliance. Some need billing and inventory. Some need a way to reduce daily accounts entry work. This guide helps separate those needs.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href={buildWhatsAppUrl("Best Accounting Software India Hero")} target="_blank" rel="noopener noreferrer">Request Early Access</a>
+      <a class="button button-secondary" href="/alternatives/tally-prime/">See Tally alternative page</a>
+    </div>
+  </section>
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Quick answer</p>
+      <h2>Choose by workflow, not by feature count.</h2>
+      <p>Indian businesses usually search for accounting software because they want one of four outcomes: GST-compliant records, faster billing, inventory control, or less manual accounts entry.</p>
+    </div>
+
+    <div class="card-grid two">
+      <article class="card"><h3>For statutory accounting</h3><p>Look at tools with strong accountant adoption, audit workflows and compliance depth.</p></article>
+      <article class="card"><h3>For billing and inventory</h3><p>Look at GST billing, item tracking, e-way bill/e-invoice support and mobile access.</p></article>
+      <article class="card"><h3>For daily entry reduction</h3><p>Look for bill capture, bank entry preparation, voice note capture and review workflow.</p></article>
+      <article class="card"><h3>For accountant collaboration</h3><p>Prioritise review controls, clean party/ledger context and exportable records.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading">
+      <p class="eyebrow">Comparison list</p>
+      <h2>Popular accounting software options in India.</h2>
+      <p>This is a practical orientation table. Verify current pricing and feature availability directly with each provider before purchase.</p>
+    </div>
+
+    <table class="comparison-table">
+      <thead><tr><th>Software</th><th>Known for</th><th>Best fit</th></tr></thead>
+      <tbody>
+        {tools.map(([name, knownFor, bestFor]) => (
+          <tr><td><strong>{name}</strong></td><td>{knownFor}</td><td>{bestFor}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">Selection criteria</p><h2>How to choose accounting software for an Indian business.</h2></div>
+    <div class="card-grid">
+      <article class="card"><h3>GST and compliance</h3><p>Check GST invoices, GST reports, e-invoicing, e-way bill and accountant review needs.</p></article>
+      <article class="card"><h3>Ease of use</h3><p>Can the owner, billing staff and accountant use it without creating confusion?</p></article>
+      <article class="card"><h3>Bank workflow</h3><p>Look at how receipts, payments, reconciliation and bank statement imports are handled.</p></article>
+      <article class="card"><h3>Inventory needs</h3><p>Trading, pharmacy, FMCG and manufacturing businesses need stronger item and stock workflows.</p></article>
+      <article class="card"><h3>Manual entry reduction</h3><p>Ask whether the software reduces typing or only gives a better screen for typing.</p></article>
+      <article class="card"><h3>Accountant control</h3><p>For India, final accountant review matters. Avoid blind auto-posting for uncertain data.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading"><p class="eyebrow">Fastbooks angle</p><h2>Where Fastbooks fits in the accounting software market.</h2><p>Fastbooks is not trying to win by having the longest feature checklist on day one. The wedge is daily accounts entry preparation: bills, receipts, voice notes and bank rows become review-ready sales, purchase, expense and bank entries.</p></div>
+    <div class="split">
+      <div class="matrix before">
+        <h3>Typical accounting software problem</h3>
+        <ol>
+          <li>Business activity happens on phone, paper and bank statement.</li>
+          <li>Accounts entry happens later on desktop.</li>
+          <li>Context gets lost.</li>
+          <li>Accountant spends time reconstructing what happened.</li>
+        </ol>
+      </div>
+      <div class="matrix after">
+        <h3>Fastbooks workflow</h3>
+        <ol>
+          <li>Capture the bill, receipt, bank row or voice note immediately.</li>
+          <li>Prepare draft accounting entries.</li>
+          <li>Let the accountant review before final posting.</li>
+          <li>Reduce typing without reducing control.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">FAQ</p><h2>Accounting software India FAQs</h2></div>
+    <div class="faq">
+      <details open><summary>Which accounting software is best for Indian small businesses?</summary><p>It depends on the business. TallyPrime is familiar to accountants, Zoho Books is cloud-first, Vyapar and myBillBook are popular for small business billing, and Fastbooks focuses on reducing daily accounts entry preparation.</p></details>
+      <details><summary>What should traders look for?</summary><p>Traders should prioritise sales, purchase, inventory, outstanding, bank receipt matching and GST review.</p></details>
+      <details><summary>What is Fastbooks best for?</summary><p>Fastbooks is best positioned for businesses and accountants who want bills, receipts, voice notes and bank transactions converted into review-ready accounting entry drafts.</p></details>
+    </div>
+  </div></section>
+
+  <WhatsAppCTA source="Best Accounting Software India" />
+</BaseLayout>

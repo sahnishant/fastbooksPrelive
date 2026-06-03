@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+import { toolPages } from "../../data/seoPages";
+
+export function getStaticPaths() {
+  return toolPages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page }
+  }));
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title={page.title} description={page.description} source={page.ctaSource}>
+  <PageHero
+    eyebrow={page.eyebrow}
+    title={page.h1}
+    subtitle={page.intro}
+    source={page.ctaSource}
+    secondaryHref="/features/gst-accounting-software/"
+    secondaryLabel="See GST accounting"
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">Tool guide</p><h2>What this page should help with.</h2></div>
+    <div class="card-grid">
+      {page.sections.map((section) => (
+        <article class="card"><h3>{section.title}</h3><p>{section.body}</p></article>
+      ))}
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading"><p class="eyebrow">Fields to capture</p><h2>Common accounting details.</h2></div>
+    <div class="check-grid">
+      {page.bullets.map((item) => <div class="check-item"><span class="badge badge-green">✓</span><span>{item}</span></div>)}
+    </div>
+  </section>
+
+  <WhatsAppCTA source={page.ctaSource} />
+</BaseLayout>

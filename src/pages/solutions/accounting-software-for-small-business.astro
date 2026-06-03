@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+
+const title = "Accounting Software for Small Business in India | Fastbooks";
+const description = "Fastbooks is accounting software for Indian small businesses. Prepare sales, purchase, expense and bank entries from bills, receipts, voice notes and bank transactions for review.";
+---
+
+<BaseLayout title={title} description={description} source="Small Business Accounting Software">
+  <PageHero
+    eyebrow="Small business accounts software"
+    title="Accounting software for Indian small businesses that want less manual entry."
+    subtitle="Fastbooks helps small businesses prepare accounts entries from bills, receipts, bank transactions and voice notes so owners and accountants can review faster."
+    source="Small Business Accounting Software"
+    secondaryHref="/tools/free-gst-calculator/"
+    secondaryLabel="Use GST calculator"
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">Daily accounts workload</p><h2>Built for the entries small businesses repeat every day.</h2></div>
+    <div class="card-grid">
+      <article class="card"><h3>Sales and receipt entries</h3><p>Prepare customer sales and bank/cash receipts from everyday transaction context.</p></article>
+      <article class="card"><h3>Purchase and expense entries</h3><p>Capture supplier bills, office expenses and operational spending before details are forgotten.</p></article>
+      <article class="card"><h3>GST review</h3><p>Prepare GST hints for review instead of treating uncertain extraction as final accounting truth.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading"><p class="eyebrow">Selection criteria</p><h2>What Indian small businesses should look for.</h2></div>
+    <div class="card-grid two">
+      <article class="card"><h3>Easy capture</h3><p>The software should work with bills, bank text, receipts and phone-first inputs.</p></article>
+      <article class="card"><h3>Accountant review</h3><p>For Indian accounts, the accountant or CA should remain in the approval loop.</p></article>
+      <article class="card"><h3>GST-aware records</h3><p>The product should support GST review, tax hints and sales/purchase clarity.</p></article>
+      <article class="card"><h3>Bank matching</h3><p>Payment and receipt entries should be easier to prepare from bank movement.</p></article>
+    </div>
+  </section>
+
+  <WhatsAppCTA source="Small Business Accounting Software" />
+</BaseLayout>

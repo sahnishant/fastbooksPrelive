@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+
+const title = "TallyPrime Alternative for Indian Businesses | Fastbooks";
+const description = "Looking for a TallyPrime alternative to reduce manual accounts entry? Fastbooks prepares sales, purchase, expense and bank entries from bills, voice notes and bank rows for accountant review.";
+---
+
+<BaseLayout title={title} description={description} source="TallyPrime Alternative">
+  <PageHero
+    eyebrow="TallyPrime workflow alternative"
+    title="A TallyPrime alternative for reducing daily accounts entry work."
+    subtitle="TallyPrime is powerful accounting software. Fastbooks takes a different angle: help owners, staff and accountants capture daily transactions faster, prepare accounting entry drafts, and review them before final posting."
+    source="TallyPrime Alternative"
+    secondaryHref="/features/whatsapp-accounting/"
+    secondaryLabel="See WhatsApp accounting"
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">Workflow difference</p><h2>Keep accountant control. Reduce manual entry.</h2></div>
+    <table class="comparison-table">
+      <thead><tr><th>Need</th><th>Traditional Tally-style workflow</th><th>Fastbooks workflow</th></tr></thead>
+      <tbody>
+        <tr><td>Daily capture</td><td>Open software and type vouchers manually.</td><td>Send bill photos, voice notes, receipts or bank rows.</td></tr>
+        <tr><td>Entry preparation</td><td>Staff or accountant selects party, ledger, amount, narration and GST.</td><td>Fastbooks prepares draft sales, purchase, expense and bank entries.</td></tr>
+        <tr><td>Review</td><td>Corrections happen after entries are typed.</td><td>Accountant reviews before approval and final posting.</td></tr>
+        <tr><td>Best fit</td><td>Strong statutory accounting and familiar CA workflow.</td><td>Faster front-office capture and review-ready accounts preparation.</td></tr>
+      </tbody>
+    </table>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading"><p class="eyebrow">Who should consider this</p><h2>For businesses where accounting entry is a daily bottleneck.</h2></div>
+    <div class="card-grid">
+      <article class="card"><h3>Owners who hate data entry</h3><p>Capture transaction context quickly instead of remembering it later.</p></article>
+      <article class="card"><h3>Accountants with many clients</h3><p>Receive cleaner draft entries and focus on review instead of typing everything.</p></article>
+      <article class="card"><h3>Teams already using Tally-like systems</h3><p>Use Fastbooks as a preparation layer without positioning it as a reckless replacement for review.</p></article>
+    </div>
+  </section>
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">FAQ</p><h2>TallyPrime alternative questions</h2></div>
+    <div class="faq">
+      <details open><summary>Is Fastbooks replacing TallyPrime?</summary><p>Not necessarily. The sharper positioning is that Fastbooks reduces daily accounting entry preparation. Accountants can still review the final accounts process.</p></details>
+      <details><summary>Why would a business need Fastbooks if it already uses Tally?</summary><p>Because the daily data-entry layer is still painful: bills, expenses, bank transactions, narration and party matching. Fastbooks targets that capture-and-prepare workflow.</p></details>
+      <details><summary>Can accountants use Fastbooks?</summary><p>Yes. The review inbox is designed for accountants who need control before entries become final.</p></details>
+    </div>
+  </div></section>
+
+  <WhatsAppCTA source="TallyPrime Alternative" />
+</BaseLayout>

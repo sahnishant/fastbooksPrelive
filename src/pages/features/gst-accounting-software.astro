@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+
+const title = "GST Accounting Software for Indian Businesses | Fastbooks";
+const description = "Fastbooks prepares GST-aware sales, purchase and expense accounting entries from bills, receipts and voice notes for accountant review.";
+---
+
+<BaseLayout title={title} description={description} source="GST Accounting Software">
+  <PageHero
+    eyebrow="GST accounting software"
+    title="GST-aware accounting entry preparation for Indian businesses."
+    subtitle="Fastbooks helps prepare sales, purchase and expense entries with GST hints so accountants can review tax treatment before final approval."
+    source="GST Accounting Software"
+    secondaryHref="/tools/free-gst-calculator/"
+    secondaryLabel="Open GST calculator"
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">GST review layer</p><h2>Designed for review, not blind auto-posting.</h2></div>
+    <div class="card-grid">
+      <article class="card"><h3>Sales invoice hints</h3><p>Prepare taxable value, GST amount and party details for review.</p></article>
+      <article class="card"><h3>Purchase bill hints</h3><p>Capture vendor, amount and GST split clues from bill scans and text inputs.</p></article>
+      <article class="card"><h3>Accountant approval</h3><p>Review HSN/SAC, ledger and GST treatment before entries become final.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading"><p class="eyebrow">Important positioning</p><h2>GST compliance needs control.</h2><p>Fastbooks should be positioned as a preparation and review layer. Do not claim automatic GST filing unless the product actually supports it end-to-end.</p></div>
+  </section>
+
+  <WhatsAppCTA source="GST Accounting Software" />
+</BaseLayout>

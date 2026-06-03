@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+import { alternativePages } from "../../data/seoPages";
+
+export function getStaticPaths() {
+  return alternativePages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page }
+  }));
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title={page.title} description={page.description} source={page.ctaSource}>
+  <PageHero
+    eyebrow={page.eyebrow}
+    title={page.h1}
+    subtitle={page.intro}
+    source={page.ctaSource}
+    secondaryHref="/features/whatsapp-accounting/"
+    secondaryLabel="See WhatsApp accounting"
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">Comparison angle</p><h2>Do not replace blindly. Reduce the workflow pain.</h2></div>
+    <table class="comparison-table">
+      <thead><tr><th>Question</th><th>Typical existing software</th><th>Fastbooks angle</th></tr></thead>
+      <tbody>
+        <tr><td>Where does friction happen?</td><td>Manual typing, delayed context, repeated entry preparation.</td><td>Capture inputs early and prepare draft entries.</td></tr>
+        <tr><td>Who should review?</td><td>Business owner, accountant or CA depending on workflow.</td><td>Human review stays central before anything is final.</td></tr>
+        <tr><td>What is the wedge?</td><td>Full accounting system or billing workflow.</td><td>Phone-first capture and review-ready accounts entry preparation.</td></tr>
+      </tbody>
+    </table>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading"><p class="eyebrow">Use cases</p><h2>Why someone may compare this option.</h2></div>
+    <div class="card-grid">
+      {page.sections.map((section) => (
+        <article class="card"><h3>{section.title}</h3><p>{section.body}</p></article>
+      ))}
+    </div>
+  </section>
+
+  <WhatsAppCTA source={page.ctaSource} />
+</BaseLayout>

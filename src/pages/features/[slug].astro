@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+import { featurePages } from "../../data/seoPages";
+
+export function getStaticPaths() {
+  return featurePages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page }
+  }));
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title={page.title} description={page.description} source={page.ctaSource}>
+  <PageHero
+    eyebrow={page.eyebrow}
+    title={page.h1}
+    subtitle={page.intro}
+    source={page.ctaSource}
+    secondaryHref="/alternatives/tally-prime/"
+    secondaryLabel="See Tally workflow page"
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">Feature workflow</p><h2>How this fits into Indian accounts work.</h2></div>
+    <div class="card-grid">
+      {page.sections.map((section) => (
+        <article class="card"><h3>{section.title}</h3><p>{section.body}</p></article>
+      ))}
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading"><p class="eyebrow">Related capabilities</p><h2>What visitors usually care about.</h2></div>
+    <div class="check-grid">
+      {page.bullets.map((item) => <div class="check-item"><span class="badge badge-green">✓</span><span>{item}</span></div>)}
+    </div>
+  </section>
+
+  <WhatsAppCTA source={page.ctaSource} />
+</BaseLayout>

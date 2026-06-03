@@ -1,0 +1,26 @@
+---
+import { buildWhatsAppUrl } from "../data/site";
+
+const {
+  eyebrow,
+  title,
+  subtitle,
+  source,
+  secondaryHref,
+  secondaryLabel
+} = Astro.props;
+---
+
+<section class="section page-hero">
+  <p class="eyebrow">{eyebrow}</p>
+  <h1>{title}</h1>
+  <p class="page-subtitle">{subtitle}</p>
+  <div class="hero-actions">
+    <a class="button button-primary" href={buildWhatsAppUrl(`${source} Hero`)} target="_blank" rel="noopener noreferrer">
+      Request Early Access
+    </a>
+    {secondaryHref && secondaryLabel && (
+      <a class="button button-secondary" href={secondaryHref}>{secondaryLabel}</a>
+    )}
+  </div>
+</section>

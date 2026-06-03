@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+
+const title = "Bank Reconciliation Software India | Fastbooks";
+const description = "Fastbooks helps Indian businesses prepare receipt and payment entries from bank statement rows with party and invoice match suggestions for accountant review.";
+---
+
+<BaseLayout title={title} description={description} source="Bank Reconciliation Software">
+  <PageHero
+    eyebrow="Bank entry and reconciliation workflow"
+    title="Bank reconciliation software for preparing receipt and payment entries faster."
+    subtitle="Fastbooks helps turn bank statement rows and transaction text into review-ready payment and receipt entries with party and invoice match suggestions."
+    source="Bank Reconciliation Software"
+    secondaryHref="/solutions/accounting-software-for-traders/"
+    secondaryLabel="See trader workflow"
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">Bank statement to accounts entry</p><h2>Reduce the most repetitive bank-entry work.</h2></div>
+    <div class="card-grid">
+      <article class="card"><h3>Receipt entries</h3><p>Identify inward NEFT/UPI/RTGS receipts and suggest customer/debtor matches.</p></article>
+      <article class="card"><h3>Payment entries</h3><p>Prepare vendor, expense or bank payment drafts from debit rows.</p></article>
+      <article class="card"><h3>Review exceptions</h3><p>Keep uncertain mappings in a review state for accountant confirmation.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="section-heading"><p class="eyebrow">Example</p><h2>Raw bank text becomes a draft entry.</h2></div>
+    <div class="preview-card">
+      <div class="input-card"><span class="tag">Bank row</span><p>“UPI/CR/RAJ ELECTRICALS/₹18,600”</p></div>
+      <div class="mock-table">
+        <div class="mock-row mock-head"><span>Type</span><span>Party</span><span>Amount</span><span>Status</span></div>
+        <div class="mock-row"><strong>Receipt</strong><span>Raj Electricals</span><span>₹18,600</span><span class="badge badge-yellow">Needs review</span></div>
+      </div>
+    </div>
+  </section>
+
+  <WhatsAppCTA source="Bank Reconciliation Software" />
+</BaseLayout>

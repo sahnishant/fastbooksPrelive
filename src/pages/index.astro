@@ -1,0 +1,111 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CheckIcon from "../components/CheckIcon.astro";
+import MockEntryCard from "../components/MockEntryCard.astro";
+import WhatsAppCTA from "../components/WhatsAppCTA.astro";
+import { buildWhatsAppUrl } from "../data/site";
+
+const title = "Fastbooks | Accounting Software for Indian Businesses";
+const description = "Fastbooks is accounting software for Indian businesses. Capture bills, receipts, bank transactions and voice notes. Prepare sales, purchase, expense and bank entries for accountant review.";
+---
+
+<BaseLayout title={title} description={description} source="Homepage">
+  <section class="section hero">
+    <div>
+      <p class="eyebrow">Private early access</p>
+      <h1>Accounting without daily data entry.</h1>
+      <p class="hero-subtitle">Send bills, receipts, bank transactions or voice notes. Fastbooks converts them into accountant-ready accounting entries for review.</p>
+      <div class="positioning-pill">Built for Indian businesses and accountants.</div>
+      <div class="hero-actions">
+        <a class="button button-primary" href={buildWhatsAppUrl("Homepage Hero")} target="_blank" rel="noopener noreferrer">Request Early Access</a>
+        <a class="button button-secondary" href="/alternatives/tally-prime/">See Tally workflow page</a>
+      </div>
+      <span class="microcopy">Takes less than 30 seconds. No public signup is open yet.</span>
+
+      <div class="check-grid">
+        {["Sales Entries", "Purchase Entries", "Expense Entries", "Bank Entries", "Outstanding", "GST Review"].map((item) => (
+          <div class="check-item"><CheckIcon /><span>{item}</span></div>
+        ))}
+      </div>
+    </div>
+
+    <MockEntryCard />
+  </section>
+
+  <section class="section-soft">
+    <div class="inner">
+      <div class="section-heading">
+        <p class="eyebrow">Who Fastbooks is for</p>
+        <h2>Made for Indian accounts work.</h2>
+        <p>Fastbooks is for businesses and accountants who want faster accounting entry preparation without losing control over final books.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card"><h3>Retail & wholesale traders</h3><p>Capture sales, purchase, expenses and receipts without typing every voucher manually.</p></article>
+        <article class="card"><h3>Manufacturers</h3><p>Prepare vendor bills, expenses, bank payments and outstanding follow-up data for review.</p></article>
+        <article class="card"><h3>Accountants</h3><p>Let clients capture daily transaction context while you review entries before final posting.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <p class="eyebrow">What it prepares automatically</p>
+      <h2>Sales, purchase, expense and bank entries from everyday inputs.</h2>
+      <p>Fastbooks is not just a bill scanner. It prepares practical accounting objects that your business or accountant can verify.</p>
+    </div>
+    <div class="card-grid">
+      <article class="card"><div class="icon-card">SALE</div><h3>Sales entries</h3><p>Prepare sales records from invoice details, customer information and quick business inputs.</p></article>
+      <article class="card"><div class="icon-card">PUR</div><h3>Purchase entries</h3><p>Capture vendor bills and prepare purchase drafts with party, amount and GST hints.</p></article>
+      <article class="card"><div class="icon-card">EXP</div><h3>Expense entries</h3><p>Record daily business costs without opening a full accounting screen for every transaction.</p></article>
+      <article class="card"><div class="icon-card">BNK</div><h3>Bank entries</h3><p>Prepare payment and receipt entries from bank statement rows and transaction text.</p></article>
+      <article class="card"><div class="icon-card">DUE</div><h3>Outstanding</h3><p>Track who has to pay, which invoices may be cleared and which accounts need follow-up.</p></article>
+      <article class="card"><div class="icon-card">GST</div><h3>GST review</h3><p>Show GST and ledger hints for accountant review instead of blindly posting uncertain tax data.</p></article>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="inner">
+      <div class="section-heading">
+        <p class="eyebrow">Before vs After</p>
+        <h2>From manual accounts entry to quick capture and review.</h2>
+      </div>
+      <div class="split">
+        <div class="matrix before">
+          <h3>Traditional accounts entry</h3>
+          <ol>
+            <li>Open accounting software.</li>
+            <li>Create a voucher or entry manually.</li>
+            <li>Select party, ledger and amount.</li>
+            <li>Add GST and narration details.</li>
+            <li>Recheck with bill, receipt or bank statement.</li>
+            <li>Save after typing everything correctly.</li>
+          </ol>
+          <div class="matrix-footer red">Often 2 to 5 minutes per entry</div>
+        </div>
+        <div class="matrix after">
+          <h3>The Fastbooks way</h3>
+          <ol>
+            <li>Send a bill, receipt, bank row or voice note.</li>
+            <li>Fastbooks prepares the accounting entry draft.</li>
+            <li>You or your accountant reviews and approves.</li>
+          </ol>
+          <div class="matrix-footer green">Capture in seconds. Review when ready.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <p class="eyebrow">Trust layer</p>
+      <h2>AI prepares. Humans approve.</h2>
+      <p>Fast capture should not mean careless accounts. Fastbooks is designed so accountants remain in control before anything becomes final.</p>
+    </div>
+    <div class="card-grid two">
+      <article class="card"><h3>Nothing posts automatically</h3><p>Every prepared entry can be checked before approval.</p></article>
+      <article class="card"><h3>Works with existing accounting habits</h3><p>Many Indian businesses already use Tally or similar systems. Fastbooks focuses on capture, preparation and review-ready accounting records.</p></article>
+    </div>
+  </section>
+
+  <WhatsAppCTA source="Homepage" />
+</BaseLayout>
