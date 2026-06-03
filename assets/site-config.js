@@ -1,5 +1,5 @@
-window.FASTBOOKS_SITE_CONFIG = {
+window.FastbooksSiteConfig = {
   siteUrl: "https://www.fastbooks.in",
-  // Replace with your real WhatsApp number including country code, for example: "919471499233".
-  whatsappNumber: "91XXXXXXXXXX"
+  // Replace this before deploying. Include country code, digits only preferred.
+  whatsappNumber: "919472612333"
 };

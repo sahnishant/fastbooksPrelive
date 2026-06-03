@@ -2,7 +2,13 @@
 
 Standalone static prelaunch website for Fastbooks.
 
-This repo is intentionally separate from the FataFat product monorepo. It contains only the public landing page and WhatsApp waitlist flow.
+This version is intentionally plain HTML/CSS/JS:
+- no monorepo
+- no package manager
+- no build step
+- Netlify-ready
+- WhatsApp waitlist CTA
+- visual direction inspired by the original FataFat/Fastbooks landing page
 
 ## Configure WhatsApp
 
@@ -12,23 +18,17 @@ Open:
 assets/site-config.js
 ```
 
-Replace:
-
-```js
-whatsappNumber: "91XXXXXXXXXX"
-```
-
-with your real WhatsApp number including country code, for example:
+Set:
 
 ```js
 whatsappNumber: "919471499233"
 ```
 
+Use your real WhatsApp number with country code.
+
 ## Local preview
 
-No build step is required. Use any static server.
-
-With Python:
+Open `index.html` directly in the browser, or run:
 
 ```bash
 python -m http.server 4174
@@ -40,28 +40,31 @@ Then open:
 http://localhost:4174
 ```
 
-## Deploy to Netlify
+## GitHub setup
 
-Connect this GitHub repo to Netlify.
+```bash
+git init
+git add .
+git commit -m "Add Fastbooks prelaunch site"
+git branch -M main
+git remote add origin https://github.com/sahnishant/fastbooksPrelive.git
+git push -u origin main
+```
 
-Use these settings:
+## Netlify setup
+
+Use the repository root.
 
 ```txt
 Build command: leave blank
 Publish directory: .
 ```
 
-The included `netlify.toml` already sets `publish = "."` and redirects apex traffic to `www.fastbooks.in`.
-
-## Domain
-
-Use `www.fastbooks.in` as the primary domain.
-
-External DNS pattern:
+Then connect your domain:
 
 ```txt
-www.fastbooks.in   CNAME   <your-netlify-site>.netlify.app
-fastbooks.in       A       75.2.60.5
+www.fastbooks.in
+fastbooks.in
 ```
 
-If your DNS supports ALIAS/ANAME/CNAME flattening, use Netlify's recommended apex target instead of the A record.
+Make `www.fastbooks.in` the primary domain.

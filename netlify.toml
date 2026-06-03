@@ -1,6 +1,3 @@
-[build]
-  publish = "."
-
 [[redirects]]
   from = "https://fastbooks.in/*"
   to = "https://www.fastbooks.in/:splat"
