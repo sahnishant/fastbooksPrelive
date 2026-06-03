@@ -1,0 +1,33 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "https://fastbooks.in/*"
+  to = "https://www.fastbooks.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://fastbooks.in/*"
+  to = "https://www.fastbooks.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.fastbooks.in/*"
+  to = "https://www.fastbooks.in/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
