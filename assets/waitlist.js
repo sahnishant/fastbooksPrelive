@@ -18,7 +18,7 @@ function buildMessage(source) {
     "",
     "Business type:",
     "Biggest bookkeeping pain:",
-    "Preferred capture: Voice + image scan",
+    "What I want to reduce first: sales bills / expenses / bank entries / GST review",
     "",
     `Source: ${source || "fastbooks.in"}`
   ].join("\n");

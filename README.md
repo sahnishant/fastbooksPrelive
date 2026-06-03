@@ -2,13 +2,25 @@
 
 Standalone static prelaunch website for Fastbooks.
 
-This version is intentionally plain HTML/CSS/JS:
-- no monorepo
-- no package manager
+This version is more accounting-focused and simpler:
 - no build step
+- no dependencies
+- no monorepo
 - Netlify-ready
 - WhatsApp waitlist CTA
-- visual direction inspired by the original FataFat/Fastbooks landing page
+- accounting-style mockups instead of generic feature text dumps
+
+## Files
+
+```txt
+index.html
+assets/styles.css
+assets/waitlist.js
+assets/site-config.js
+netlify.toml
+robots.txt
+sitemap.xml
+```
 
 ## Configure WhatsApp
 
@@ -18,17 +30,23 @@ Open:
 assets/site-config.js
 ```
 
-Set:
+Replace:
+
+```js
+whatsappNumber: "91XXXXXXXXXX"
+```
+
+with your real WhatsApp number including country code:
 
 ```js
 whatsappNumber: "919471499233"
 ```
 
-Use your real WhatsApp number with country code.
-
 ## Local preview
 
-Open `index.html` directly in the browser, or run:
+Option 1: open `index.html` directly.
+
+Option 2:
 
 ```bash
 python -m http.server 4174
@@ -40,12 +58,12 @@ Then open:
 http://localhost:4174
 ```
 
-## GitHub setup
+## Push to GitHub
 
 ```bash
 git init
 git add .
-git commit -m "Add Fastbooks prelaunch site"
+git commit -m "Rebuild Fastbooks prelaunch page"
 git branch -M main
 git remote add origin https://github.com/sahnishant/fastbooksPrelive.git
 git push -u origin main
@@ -60,7 +78,7 @@ Build command: leave blank
 Publish directory: .
 ```
 
-Then connect your domain:
+Then connect:
 
 ```txt
 www.fastbooks.in

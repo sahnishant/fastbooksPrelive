@@ -3,153 +3,281 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fastbooks — Accounting Re‑Imagined</title>
-    <meta name="description" content="Fastbooks helps Indian small businesses capture bills, expenses, inventory and business records with voice, scan and AI-assisted bookkeeping." />
+    <title>Fastbooks — Bookkeeping without daily data entry</title>
+    <meta
+      name="description"
+      content="Fastbooks helps Indian small businesses capture bills, expenses, bank entries and voice notes, then prepare clean accounting records for review."
+    />
     <link rel="canonical" href="https://www.fastbooks.in/" />
-    <meta property="og:title" content="Fastbooks — Accounting Re‑Imagined" />
-    <meta property="og:description" content="Speak it. Scan it. Fastbooks helps organise your books." />
+    <meta property="og:title" content="Fastbooks — Bookkeeping without daily data entry" />
+    <meta property="og:description" content="Send bills, bank entries and voice notes. Fastbooks prepares clean books for review." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.fastbooks.in/" />
-    <meta name="theme-color" content="#ff3c00" />
+    <meta name="theme-color" content="#0f172a" />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
+
   <body>
-    <header class="navbar">
-      <a class="logo-block" href="#top" aria-label="Fastbooks home">
-        <span class="logo-mark">F</span>
-        <span>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Fastbooks home">
+        <span class="brand-mark">F</span>
+        <span class="brand-text">
           <strong>Fastbooks</strong>
-          <small>Accounting re‑imagined</small>
+          <small>Accounting re-imagined</small>
         </span>
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#why">Why Fastbooks?</a>
-        <a href="#workflow">Workflow</a>
-        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#handles">What it handles</a>
+        <a href="#review">Accountant review</a>
       </nav>
 
-      <button class="top-cta" data-waitlist-trigger type="button">Request early access</button>
+      <button class="button button-primary header-cta" type="button" data-waitlist-trigger>
+        Request early access
+      </button>
     </header>
 
     <main id="top">
-      <section class="hero">
+      <section class="hero section">
         <div class="hero-copy">
-          <p class="eyebrow">Private early access for Indian small businesses</p>
-          <h1>Accounting<br />RE‑Imagined</h1>
-          <p class="subhead">
-            Speak it. Scan it. Fastbooks helps organise bills, expenses, inventory and books with less typing.
+          <p class="eyebrow">Private early access</p>
+          <h1>Bookkeeping without daily data entry.</h1>
+          <p class="hero-subtitle">
+            Send bills, receipts, bank entries and voice notes. Fastbooks prepares clean accounting records for review.
           </p>
+
           <div class="hero-actions">
-            <button class="primary-cta" data-waitlist-trigger type="button">Join the waitlist</button>
-            <a class="secondary-cta" href="#workflow">See how it works</a>
+            <button class="button button-primary" type="button" data-waitlist-trigger>
+              Request early access on WhatsApp
+            </button>
+            <a class="button button-secondary" href="#how">See how it works</a>
           </div>
-          <p class="microcopy">No database form. Your early-access request opens directly in WhatsApp.</p>
+
+          <div class="hero-proof" aria-label="Trust points">
+            <span>Built for Indian small businesses</span>
+            <span>Human review before books are final</span>
+            <span>No public signup yet</span>
+          </div>
         </div>
 
-        <div class="hero-showcase" aria-label="Fastbooks product preview">
-          <div class="video-frame">
-            <div class="video-topbar">
-              <span></span><span></span><span></span>
-              <p>Fastbooks Preview</p>
+        <div class="accounting-preview" aria-label="Fastbooks accounting workflow preview">
+          <div class="preview-header">
+            <div>
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
             </div>
-            <div class="preview-grid">
-              <div class="voice-card">
-                <span class="chip">Voice note</span>
-                <p>“Bought packing material for ₹2,450. Add it as expense.”</p>
+            <strong>Review Inbox</strong>
+          </div>
+
+          <div class="inbox-card voice">
+            <div>
+              <span class="tag">Voice note</span>
+              <p>“Bought motor spare parts for ₹12,500. Put it under purchase expense.”</p>
+            </div>
+            <span class="status">Captured</span>
+          </div>
+
+          <div class="inbox-card bill">
+            <div>
+              <span class="tag">Bill scan</span>
+              <div class="mini-receipt">
+                <i></i><i></i><i></i><i></i>
               </div>
-              <div class="scan-card">
-                <span class="chip cyan">Bill scan</span>
-                <div class="receipt-lines">
-                  <i></i><i></i><i></i><i></i>
-                </div>
-              </div>
-              <div class="result-card">
-                <span class="chip green">Review ready</span>
-                <strong>Expense · Packing material</strong>
-                <p>₹2,450 · Needs accountant review</p>
-              </div>
+            </div>
+            <span class="status">Read</span>
+          </div>
+
+          <div class="ledger-panel">
+            <div class="ledger-row ledger-head">
+              <span>Date</span>
+              <span>Ledger</span>
+              <span>Amount</span>
+              <span>Status</span>
+            </div>
+            <div class="ledger-row">
+              <span>03 Jun</span>
+              <strong>Spare Parts</strong>
+              <span>₹12,500</span>
+              <em>Needs review</em>
+            </div>
+            <div class="ledger-row">
+              <span>03 Jun</span>
+              <strong>Bank Payment</strong>
+              <span>₹12,500</span>
+              <em>Matched</em>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="why" class="ai-books">
+      <section id="how" class="section">
         <div class="section-heading">
-          <h2>WHY FASTBOOKS?</h2>
-          <div class="rule"></div>
-          <p>Exploring the advantages of AI in the world of books.</p>
+          <p class="eyebrow">How it works</p>
+          <h2>Capture the work first. Review the books later.</h2>
         </div>
 
-        <div class="feature-columns">
-          <div class="feature-column">
-            <article class="feature"><span>🤖</span><p>AI-assisted bookkeeping</p></article>
-            <article class="feature"><span>⚡</span><p>Minimum manual effort</p></article>
-            <article class="feature"><span>🎯</span><p>Focus on customers</p></article>
-            <article class="feature"><span>📷</span><p>Scan and get work done</p></article>
-            <article class="feature"><span>🔁</span><p>Designed for accountant review</p></article>
-            <article class="feature"><span>📦</span><p>Inventory and customer visibility</p></article>
-          </div>
-          <div class="feature-column">
-            <article class="feature"><span>🛡️</span><p>Privacy-aware workflow</p></article>
-            <article class="feature"><span>🏦</span><p>Bank import roadmap</p></article>
-            <article class="feature"><span>📊</span><p>Detailed analytics</p></article>
-            <article class="feature"><span>💳</span><p>Debtor and credit follow-up</p></article>
-            <article class="feature"><span>🧾</span><p>Assisted purchase workflows</p></article>
-            <article class="feature"><span>📈</span><p>Focus on profitable products</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section id="workflow" class="workflow">
-        <div class="section-heading">
-          <h2>SPEAK → SCAN → REVIEW</h2>
-          <div class="rule"></div>
-          <p>The first version is built around reducing typing, not adding more accounting screens.</p>
-        </div>
-
-        <div class="workflow-grid">
+        <div class="steps-grid">
           <article>
-            <span>01</span>
-            <h3>Speak</h3>
-            <p>Record a normal business instruction. Fastbooks turns messy words into structured intent.</p>
+            <span class="step-number">01</span>
+            <h3>Send</h3>
+            <p>Share a bill photo, receipt, bank statement row, or voice note.</p>
           </article>
           <article>
-            <span>02</span>
-            <h3>Scan</h3>
-            <p>Capture bills, receipts and WhatsApp screenshots before they are lost in daily work.</p>
+            <span class="step-number">02</span>
+            <h3>Prepare</h3>
+            <p>Fastbooks extracts party, date, amount, narration and accounting hints.</p>
           </article>
           <article>
-            <span>03</span>
+            <span class="step-number">03</span>
             <h3>Review</h3>
-            <p>Keep the owner fast while giving the accountant a cleaner review layer.</p>
+            <p>You or your accountant checks the record before it becomes part of the books.</p>
           </article>
         </div>
       </section>
 
-      <section id="features" class="need">
+      <section id="pillars" class="section pillars-section">
         <div class="section-heading">
-          <h2>EVERYTHING YOU NEED TO START CLEANER BOOKS</h2>
-          <div class="rule"></div>
-          <p>Your early access helps shape what Fastbooks builds first.</p>
+          <p class="eyebrow">Why Fastbooks?</p>
+          <h2>Three accounting problems, one simple workflow.</h2>
         </div>
 
-        <div class="need-grid">
-          <article><p>Voice<br />Bills</p><span>🎙️</span></article>
-          <article><p>Scan<br />Expenses</p><span>📸</span></article>
-          <article><p>Review<br />Reports</p><span>📋</span></article>
-          <article><p>Credit<br />Follow-up</p><span>💬</span></article>
-          <article><p>GST<br />Ready Books</p><span>🇮🇳</span></article>
+        <div class="bento-grid">
+          <article class="bento-card bento-large">
+            <div class="bento-copy">
+              <span class="tag">Effortless data entry</span>
+              <h3>Less typing for daily transactions.</h3>
+              <p>Voice notes and bill photos become structured draft records instead of manual entry work.</p>
+            </div>
+            <div class="visual-stack">
+              <div class="message-line short"></div>
+              <div class="message-line"></div>
+              <div class="message-line medium"></div>
+              <div class="arrow-down">↓</div>
+              <div class="draft-entry">
+                <strong>Purchase Expense</strong>
+                <span>₹12,500 · Spare parts</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <span class="tag">Financial control</span>
+            <h3>Know what moved.</h3>
+            <div class="amount-list">
+              <div><span>Sales</span><strong>₹82,400</strong></div>
+              <div><span>Expenses</span><strong>₹24,930</strong></div>
+              <div><span>Receivable</span><strong>₹41,200</strong></div>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <span class="tag">Accountant-ready</span>
+            <h3>AI prepares. Humans approve.</h3>
+            <div class="review-box">
+              <span>GST hint</span>
+              <span>Ledger match</span>
+              <span>Needs review</span>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section class="waitlist-band">
+      <section id="handles" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">What it handles</p>
+          <h2>Designed around real accounting objects.</h2>
+        </div>
+
+        <div class="handles-grid">
+          <article>
+            <div class="icon-card invoice-icon">
+              <span></span><span></span><span></span>
+            </div>
+            <h3>Sales bills</h3>
+            <p>Create cleaner sales records from quick inputs.</p>
+          </article>
+          <article>
+            <div class="icon-card receipt-icon">
+              <span></span><span></span><span></span>
+            </div>
+            <h3>Purchase bills</h3>
+            <p>Capture vendor bills before they disappear.</p>
+          </article>
+          <article>
+            <div class="icon-card expense-icon">
+              <strong>₹</strong>
+            </div>
+            <h3>Expenses</h3>
+            <p>Record daily costs without opening a full accounting screen.</p>
+          </article>
+          <article>
+            <div class="icon-card bank-icon">
+              <span></span><span></span><span></span>
+            </div>
+            <h3>Bank entries</h3>
+            <p>Prepare payment and receipt records from bank movement.</p>
+          </article>
+          <article>
+            <div class="icon-card ledger-icon">
+              <span>Dr</span><span>Cr</span>
+            </div>
+            <h3>Outstanding</h3>
+            <p>See who has to pay and who needs follow-up.</p>
+          </article>
+          <article>
+            <div class="icon-card gst-icon">
+              <strong>GST</strong>
+            </div>
+            <h3>GST review</h3>
+            <p>Keep records easier for accountant and tax review.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="review" class="section review-section">
+        <div class="review-copy">
+          <p class="eyebrow">Trust layer</p>
+          <h2>Fast capture should not mean careless books.</h2>
+          <p>
+            Fastbooks is being designed so business owners can capture faster while accountants still get a clear review layer before final posting.
+          </p>
+        </div>
+
+        <div class="review-panel">
+          <div class="review-row">
+            <span>Party</span>
+            <strong>Shree Electricals</strong>
+            <em>Matched</em>
+          </div>
+          <div class="review-row">
+            <span>Ledger</span>
+            <strong>Repairs & Maintenance</strong>
+            <em>Review</em>
+          </div>
+          <div class="review-row">
+            <span>Tax</span>
+            <strong>GST not confirmed</strong>
+            <em>Check</em>
+          </div>
+          <div class="review-row approve">
+            <span>Action</span>
+            <strong>Ready for accountant approval</strong>
+            <em>Safe</em>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band section">
         <div>
           <p class="eyebrow">Early access</p>
-          <h2>Tell us where accounting typing hurts the most.</h2>
-          <p>Click the button. WhatsApp opens with a prefilled message. Edit it and send directly.</p>
+          <h2>Want to try Fastbooks?</h2>
+          <p>Tell us your business type and the accounting work you want to reduce first.</p>
         </div>
-        <button class="primary-cta" data-waitlist-trigger type="button">Request early access on WhatsApp</button>
+        <button class="button button-primary" type="button" data-waitlist-trigger>
+          Request early access on WhatsApp
+        </button>
       </section>
     </main>
 
