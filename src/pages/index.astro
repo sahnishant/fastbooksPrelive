@@ -3,21 +3,61 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CheckIcon from "../components/CheckIcon.astro";
 import MockEntryCard from "../components/MockEntryCard.astro";
 import WhatsAppCTA from "../components/WhatsAppCTA.astro";
+import StickyWhatsAppCTA from "../components/StickyWhatsAppCTA.astro";
+import FAQSection from "../components/FAQSection.astro";
 import { buildWhatsAppUrl } from "../data/site";
 
-const title = "Fastbooks | Accounting Software for Indian Businesses";
-const description = "Fastbooks is accounting software for Indian businesses. Capture bills, receipts, bank transactions and voice notes. Prepare sales, purchase, expense and bank entries for accountant review.";
+const faqs = [
+  {
+    question: "Is FastBooks live right now?",
+    answer: "FastBooks is currently in prelaunch / early-access mode. You can message us on WhatsApp to register interest and discuss whether it fits your business workflow."
+  },
+  {
+    question: "Is FastBooks free?",
+    answer: "There is no payment required to request early access. Pricing and plan details will be shared clearly before any paid launch."
+  },
+  {
+    question: "Will it support GST billing?",
+    answer: "FastBooks is being designed for Indian GST billing workflows, including invoices, parties, and business records. Final tax treatment should always be reviewed with your accountant or CA."
+  },
+  {
+    question: "Can I move data from Tally, Vyapar, or Excel?",
+    answer: "We plan to support practical import workflows where possible. During early access, we will first understand your current setup and guide you on what can be moved safely."
+  },
+  {
+    question: "Is my data safe?",
+    answer: "We are building FastBooks with secure access and responsible data handling in mind. We will clearly explain what data is collected, where it is used, and how users can manage it."
+  },
+  {
+    question: "Who is FastBooks for?",
+    answer: "It is designed for Indian small business owners, traders, wholesalers, retailers, and accountants who want a straightforward, mobile-friendly way to maintain daily billing and ledger records."
+  },
+  {
+    question: "What happens after I message on WhatsApp?",
+    answer: "You will chat directly with our prelaunch team. We will note down your business requirements and contact you when relevant early-access onboarding is available."
+  }
+];
+
+const title = "Simple GST Billing & Accounting Software for Indian Small Businesses | FastBooks";
+const description = "FastBooks is a simple GST billing and accounting product for Indian traders, retailers, wholesalers, and accountants. Request early access on WhatsApp.";
 ---
 
-<BaseLayout title={title} description={description} source="Homepage">
+<BaseLayout title={title} description={description} source="Homepage" faqs={faqs}>
   <section class="section hero">
     <div>
       <p class="eyebrow">Private early access</p>
-      <h1>Accounting without daily data entry.</h1>
-      <p class="hero-subtitle">Send bills, receipts, bank transactions or voice notes. Fastbooks converts them into accountant-ready accounting entries for review.</p>
-      <div class="positioning-pill">Built for Indian businesses and accountants.</div>
+      <h1>Simple GST Billing &amp; Accounting Software for Indian Small Businesses</h1>
+      <p class="hero-subtitle">Send bills, receipts, bank transactions or voice notes. FastBooks converts them into accountant‑ready accounting entries for review.</p>
       <div class="hero-actions">
-        <a class="button button-primary" href={buildWhatsAppUrl()} target="_blank" rel="noopener noreferrer" data-event="request_early_access_click" data-page="Homepage" data-cta-location="hero" data-source="Homepage Hero" data-target="whatsapp">Request Early Access</a>
+        <a class="button button-primary" href={buildWhatsAppUrl()} target="_blank" rel="noopener noreferrer"
+          data-event="request_early_access_click"
+          data-page="Homepage"
+          data-cta-location="hero"
+          data-source="Homepage Hero"
+          data-target="whatsapp"
+          data-analytics="hero-whatsapp-cta">
+          Get Early Access on WhatsApp
+        </a>
         <a class="button button-secondary" href="/alternatives/tally-prime/">See Tally workflow page</a>
       </div>
       <span class="microcopy">Takes less than 30 seconds. Opens directly in WhatsApp. We respect your privacy.</span>
@@ -32,7 +72,7 @@ const description = "Fastbooks is accounting software for Indian businesses. Cap
     <MockEntryCard />
   </section>
 
-  <section class="section-soft">
+  <section class="section-soft" data-analytics="section-benefits-view">
     <div class="inner">
       <div class="section-heading">
         <p class="eyebrow">Who Fastbooks is for</p>
@@ -63,7 +103,7 @@ const description = "Fastbooks is accounting software for Indian businesses. Cap
     </div>
   </section>
 
-  <section class="section-soft">
+  <section class="section-soft" data-analytics="section-workflow-view">
     <div class="inner">
       <div class="section-heading">
         <p class="eyebrow">Before vs After</p>
@@ -107,5 +147,7 @@ const description = "Fastbooks is accounting software for Indian businesses. Cap
     </div>
   </section>
 
+  <FAQSection faqs={faqs} />
   <WhatsAppCTA source="Homepage" />
+  <StickyWhatsAppCTA />
 </BaseLayout>
