@@ -13,6 +13,5 @@
     "@astrojs/check": "latest",
     "astro": "latest",
     "typescript": "latest"
-  },
-  "devDependencies": {}
+  }
 }
