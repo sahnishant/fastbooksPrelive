@@ -12,7 +12,7 @@ export const site = {
   defaultOgImage: "/og/fastbooks-og.svg",
   defaultTitle: "Fastbooks | Accounting Software for Indian Businesses",
   defaultDescription:
-    "Fastbooks is accounting software for Indian businesses. Capture bills, receipts, bank transactions and voice notes. Prepare sales, purchase, expense and bank entries for accountant review.",
+    "Fastbooks converts bills, receipts, bank transactions, and voice notes into accountant-ready accounting entries for Indian businesses to review.",
   nav: [
     { label: "Best Software", href: "/resources/best-accounting-software-india/" },
     { label: "Tally Alternative", href: "/alternatives/tally-prime/" },
