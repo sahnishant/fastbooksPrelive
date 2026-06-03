@@ -25,7 +25,7 @@ const {
       <div class="faq">
         {faqs.map((faq: FAQItem, index: number) => (
           <details open={index === 0}>
-            <summary>{faq.question}</summary>
+            <summary data-analytics="faq-toggle">{faq.question}</summary>
             <p>{faq.answer}</p>
           </details>
         ))}
