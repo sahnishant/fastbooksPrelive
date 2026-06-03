@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.fastbooks.in/sitemap.xml
+Sitemap: https://fastbooks.in/sitemap.xml

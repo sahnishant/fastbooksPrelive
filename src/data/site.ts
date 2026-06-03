@@ -1,8 +1,13 @@
+export const whatsappConfig = {
+  phoneNumber: "919472612333",
+  message: "Hi, I want early access to Fastbooks. Please contact me."
+};
+
 export const site = {
   name: "Fastbooks",
-  url: "https://www.fastbooks.in",
+  url: "https://fastbooks.in",
   tagline: "Accounting without daily entry",
-  ownerWhatsAppNumber: "919472612333",
+  ownerWhatsAppNumber: whatsappConfig.phoneNumber,
   googleSiteVerification: "",
   defaultOgImage: "/og/fastbooks-og.svg",
   defaultTitle: "Fastbooks | Accounting Software for Indian Businesses",
@@ -46,14 +51,6 @@ export const footerLinks = {
   ]
 };
 
-export function buildWhatsAppUrl(source: string) {
-  const message = [
-    "Hi, I want early access to Fastbooks.",
-    "",
-    `Page: ${source}`,
-    "",
-    "Please contact me."
-  ].join("\n");
-
-  return `https://wa.me/${site.ownerWhatsAppNumber}?text=${encodeURIComponent(message)}`;
+export function buildWhatsAppUrl(_source?: string) {
+  return `https://wa.me/${whatsappConfig.phoneNumber}?text=${encodeURIComponent(whatsappConfig.message)}`;
 }

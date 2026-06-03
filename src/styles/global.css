@@ -948,3 +948,12 @@ textarea.form-control {
     grid-template-columns: 1fr;
   }
 }
+
+.cta-trust-note {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin-top: 14px;
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: 550;
+}
