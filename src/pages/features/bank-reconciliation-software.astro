@@ -1,13 +1,46 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import PageHero from "../../components/PageHero.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQSection from "../../components/FAQSection.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
 import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
 
 const title = "Bank Reconciliation Software India | Fastbooks";
 const description = "Fastbooks helps Indian businesses prepare receipt and payment entries from bank statement rows with party and invoice match suggestions for accountant review.";
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Features", href: "/features/bank-reconciliation-software/" },
+  { name: "Bank Reconciliation Software", href: "/features/bank-reconciliation-software/" }
+];
+const faqs = [
+  {
+    question: "What is bank reconciliation software for small businesses?",
+    answer: "Bank reconciliation software helps compare bank transactions with accounting records. Fastbooks focuses on the earlier step: turning bank statement rows into draft receipt and payment entries with party and invoice match suggestions for accountant review."
+  },
+  {
+    question: "Can Fastbooks automatically post bank entries?",
+    answer: "Fastbooks should be described as preparing draft entries for review, not blindly posting final records. Bank narration, party matching and invoice matching should remain reviewable."
+  },
+  {
+    question: "Which bank transactions are useful for Fastbooks?",
+    answer: "Inward receipts, vendor payments, UPI collections, NEFT/RTGS lines and recurring charges are useful because they often map to receipt, payment or expense entries."
+  }
+];
+const relatedLinks = [
+  { label: "TallyPrime alternative", href: "/alternatives/tally-prime/", description: "Reduce manual voucher entry while keeping accountant control." },
+  { label: "Accounting software for traders", href: "/solutions/accounting-software-for-traders/", description: "Bank receipts, outstanding and customer collections for traders." },
+  { label: "WhatsApp accounting", href: "/features/whatsapp-accounting/", description: "Capture bank text and voice notes from the phone." },
+  { label: "Best accounting software India", href: "/resources/best-accounting-software-india/", description: "Compare accounting software options by workflow." },
+  { label: "Ledger accounting software", href: "/features/ledger-accounting-software/", description: "Party and ledger hints for review-ready entries." },
+  { label: "Free GST calculator", href: "/tools/free-gst-calculator/", description: "Estimate GST amounts for related records." }
+];
 ---
 
-<BaseLayout title={title} description={description} source="Bank Reconciliation Software">
+<BaseLayout title={title} description={description} source="Bank Reconciliation Software" breadcrumbs={breadcrumbs} faqs={faqs}>
+  <Breadcrumbs items={breadcrumbs} />
+
   <PageHero
     eyebrow="Bank entry and reconciliation workflow"
     title="Bank reconciliation software for preparing receipt and payment entries faster."
@@ -15,6 +48,13 @@ const description = "Fastbooks helps Indian businesses prepare receipt and payme
     source="Bank Reconciliation Software"
     secondaryHref="/solutions/accounting-software-for-traders/"
     secondaryLabel="See trader workflow"
+  />
+
+  <AnswerBlock
+    eyebrow="Direct answer"
+    title="How does Fastbooks help with bank reconciliation?"
+    answer="Fastbooks helps prepare the accounting work around bank reconciliation. It can turn bank statement rows such as NEFT receipts, UPI credits, vendor payments and bank charges into draft receipt, payment or expense entries. The accountant still reviews party matching, invoice matching and ledger treatment before final posting."
+    bullets={["Prepare receipt and payment drafts from bank text.", "Keep uncertain matches in review.", "Reduce manual entry before reconciliation."]}
   />
 
   <section class="section-soft"><div class="inner">
@@ -27,15 +67,18 @@ const description = "Fastbooks helps Indian businesses prepare receipt and payme
   </div></section>
 
   <section class="section">
-    <div class="section-heading"><p class="eyebrow">Example</p><h2>Raw bank text becomes a draft entry.</h2></div>
-    <div class="preview-card">
-      <div class="input-card"><span class="tag">Bank row</span><p>“UPI/CR/RAJ ELECTRICALS/₹18,600”</p></div>
-      <div class="mock-table">
-        <div class="mock-row mock-head"><span>Type</span><span>Party</span><span>Amount</span><span>Status</span></div>
-        <div class="mock-row"><strong>Receipt</strong><span>Raj Electricals</span><span>₹18,600</span><span class="badge badge-yellow">Needs review</span></div>
-      </div>
-    </div>
+    <div class="section-heading"><p class="eyebrow">Examples</p><h2>Raw bank text becomes draft accounting work.</h2></div>
+    <table class="comparison-table">
+      <thead><tr><th>Bank narration</th><th>Possible draft</th><th>Review needed</th></tr></thead>
+      <tbody>
+        <tr><td>NEFT RECEIVED SHARMA TRADERS ₹85,000</td><td>Receipt entry from Sharma Traders</td><td>Party and invoice match</td></tr>
+        <tr><td>UPI/CR/RAJ ELECTRICALS/₹18,600</td><td>Receipt entry from Raj Electricals</td><td>Debtor ledger and invoice clearance</td></tr>
+        <tr><td>IMPS PAID GUPTA MOTORS ₹12,500</td><td>Payment or expense draft</td><td>Vendor, ledger and bill reference</td></tr>
+      </tbody>
+    </table>
   </section>
 
+  <FAQSection faqs={faqs} title="Bank reconciliation software FAQs" />
+  <RelatedLinks links={relatedLinks} />
   <WhatsAppCTA source="Bank Reconciliation Software" />
 </BaseLayout>

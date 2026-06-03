@@ -14,7 +14,7 @@ const description = "Use the free GST calculator to estimate taxable value, GST 
   </section>
 
   <section class="section-soft"><div class="inner">
-    <div class="calculator">
+    <div class="calculator" data-gst-calculator>
       <div class="calc-grid">
         <div class="form-group">
           <label for="gst-amount">Amount</label>
@@ -62,7 +62,7 @@ const description = "Use the free GST calculator to estimate taxable value, GST 
 
   <WhatsAppCTA source="Free GST Calculator" />
 
-  <script>
+  <script is:inline>
     const amount = document.querySelector("[data-gst-amount]");
     const rate = document.querySelector("[data-gst-rate]");
     const mode = document.querySelector("[data-gst-mode]");

@@ -1,10 +1,45 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQSection from "../../components/FAQSection.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
 import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
 import { buildWhatsAppUrl } from "../../data/site";
 
 const title = "Best Accounting Software in India for Small Businesses | Fastbooks";
 const description = "Compare accounting software in India for small businesses, traders and accountants. Learn how to choose between TallyPrime, Zoho Books, Vyapar, myBillBook and Fastbooks.";
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Resources", href: "/resources/best-accounting-software-india/" },
+  { name: "Best Accounting Software India", href: "/resources/best-accounting-software-india/" }
+];
+const faqs = [
+  {
+    question: "Which accounting software is best for Indian small businesses?",
+    answer: "There is no single best accounting software for every Indian small business. TallyPrime is familiar to accountants, Zoho Books is cloud-first, Vyapar and myBillBook are popular for billing, and Fastbooks focuses on reducing daily manual accounts entry by preparing drafts from bills, receipts, bank rows and voice notes."
+  },
+  {
+    question: "What should traders and wholesalers look for in accounting software?",
+    answer: "Traders and wholesalers should look for sales entries, purchase entries, GST support, outstanding tracking, bank receipt matching and accountant review. These workflows matter more than a long feature checklist."
+  },
+  {
+    question: "Where does Fastbooks fit among Indian accounting software options?",
+    answer: "Fastbooks fits as a capture-first accounts entry preparation layer. It helps businesses convert everyday inputs into review-ready sales, purchase, expense and bank entry drafts before final accountant approval."
+  },
+  {
+    question: "Should businesses replace TallyPrime with Fastbooks?",
+    answer: "Not necessarily. A safer starting position is to use Fastbooks to reduce daily entry preparation and give accountants cleaner records to review. Fastbooks should not be positioned as a full statutory accounting replacement unless that workflow is implemented and verified."
+  }
+];
+const relatedLinks = [
+  { label: "TallyPrime alternative", href: "/alternatives/tally-prime/", description: "Compare Tally-style manual entry with Fastbooks' capture-first workflow." },
+  { label: "Accounting software for traders", href: "/solutions/accounting-software-for-traders/", description: "Sales, purchase, outstanding and bank-entry workflows for traders." },
+  { label: "Bank reconciliation software", href: "/features/bank-reconciliation-software/", description: "Turn bank statement rows into review-ready receipt and payment drafts." },
+  { label: "GST accounting software", href: "/features/gst-accounting-software/", description: "GST-aware entry preparation with accountant review." },
+  { label: "Most used accounting software India", href: "/resources/most-used-accounting-software-india/", description: "Understand software categories and what businesses use them for." },
+  { label: "Free GST calculator", href: "/tools/free-gst-calculator/", description: "Estimate GST amount, taxable value, CGST and SGST." }
+];
 const tools = [
   ["TallyPrime", "Established accounting and compliance workflows", "Businesses and accountants who want a familiar statutory accounting system"],
   ["Zoho Books", "Cloud accounting, invoicing and reports", "Businesses that prefer cloud-first finance software"],
@@ -19,16 +54,25 @@ const tools = [
 ];
 ---
 
-<BaseLayout title={title} description={description} source="Best Accounting Software India">
+<BaseLayout title={title} description={description} source="Best Accounting Software India" pageType="Article" breadcrumbs={breadcrumbs} faqs={faqs} datePublished="2026-06-03" dateModified="2026-06-03">
+  <Breadcrumbs items={breadcrumbs} />
+
   <section class="section page-hero">
     <p class="eyebrow">Accounting software guide</p>
     <h1>Best accounting software in India for small businesses.</h1>
-    <p class="page-subtitle">The best accounting software is not the same for every Indian business. Some teams need statutory compliance. Some need billing and inventory. Some need a way to reduce daily accounts entry work. This guide helps separate those needs.</p>
+    <p class="page-subtitle">The best accounting software is not the same for every Indian business. Some teams need statutory accounting. Some need billing and inventory. Some need a way to reduce daily accounts entry work.</p>
     <div class="hero-actions">
-      <a class="button button-primary" href={buildWhatsAppUrl("Best Accounting Software India Hero")} target="_blank" rel="noopener noreferrer">Request Early Access</a>
+      <a class="button button-primary" href={buildWhatsAppUrl("Best Accounting Software India Hero")} target="_blank" rel="noopener noreferrer" data-event="request_early_access_click" data-page="Best Accounting Software India" data-cta-location="hero" data-source="Best Accounting Software India">Request Early Access</a>
       <a class="button button-secondary" href="/alternatives/tally-prime/">See Tally alternative page</a>
     </div>
   </section>
+
+  <AnswerBlock
+    eyebrow="Direct answer"
+    title="What is the best accounting software in India?"
+    answer="The best accounting software in India depends on the job to be done. TallyPrime is widely used for accountant-led statutory accounting, Zoho Books is strong for cloud accounting, Vyapar and myBillBook are popular for small-business billing, and Fastbooks is built for businesses that want to reduce manual accounts entry by preparing drafts from bills, receipts, voice notes and bank transactions."
+    bullets={["Choose by workflow, not only by feature count.", "For Indian businesses, GST, bank entries, sales, purchase and accountant review matter most.", "Fastbooks' wedge is capture-first accounting entry preparation."]}
+  />
 
   <section class="section-soft"><div class="inner">
     <div class="section-heading">
@@ -98,14 +142,7 @@ const tools = [
     </div>
   </section>
 
-  <section class="section-soft"><div class="inner">
-    <div class="section-heading"><p class="eyebrow">FAQ</p><h2>Accounting software India FAQs</h2></div>
-    <div class="faq">
-      <details open><summary>Which accounting software is best for Indian small businesses?</summary><p>It depends on the business. TallyPrime is familiar to accountants, Zoho Books is cloud-first, Vyapar and myBillBook are popular for small business billing, and Fastbooks focuses on reducing daily accounts entry preparation.</p></details>
-      <details><summary>What should traders look for?</summary><p>Traders should prioritise sales, purchase, inventory, outstanding, bank receipt matching and GST review.</p></details>
-      <details><summary>What is Fastbooks best for?</summary><p>Fastbooks is best positioned for businesses and accountants who want bills, receipts, voice notes and bank transactions converted into review-ready accounting entry drafts.</p></details>
-    </div>
-  </div></section>
-
+  <FAQSection faqs={faqs} title="Accounting software India FAQs" />
+  <RelatedLinks links={relatedLinks} />
   <WhatsAppCTA source="Best Accounting Software India" />
 </BaseLayout>

@@ -1,13 +1,46 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import PageHero from "../../components/PageHero.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQSection from "../../components/FAQSection.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
 import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
 
 const title = "TallyPrime Alternative for Indian Businesses | Fastbooks";
 const description = "Looking for a TallyPrime alternative to reduce manual accounts entry? Fastbooks prepares sales, purchase, expense and bank entries from bills, voice notes and bank rows for accountant review.";
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Alternatives", href: "/alternatives/tally-prime/" },
+  { name: "TallyPrime Alternative", href: "/alternatives/tally-prime/" }
+];
+const faqs = [
+  {
+    question: "Is Fastbooks a TallyPrime replacement?",
+    answer: "Fastbooks should not be positioned as a direct TallyPrime replacement at this stage. It is better understood as an accounts entry preparation layer that captures bills, receipts, voice notes and bank rows, then prepares drafts for accountant review."
+  },
+  {
+    question: "Why would a business need Fastbooks if it already uses TallyPrime?",
+    answer: "Many businesses still struggle with daily voucher entry, bill capture, narration, bank receipts and party matching. Fastbooks targets this capture-and-prepare layer so accountants can review cleaner draft entries."
+  },
+  {
+    question: "Can accountants use Fastbooks with their existing workflow?",
+    answer: "Yes. The intended workflow is accountant-friendly: Fastbooks prepares accounting entry drafts, but humans review before final posting."
+  }
+];
+const relatedLinks = [
+  { label: "Bank reconciliation software", href: "/features/bank-reconciliation-software/", description: "Prepare receipt and payment drafts from bank statement text." },
+  { label: "WhatsApp accounting", href: "/features/whatsapp-accounting/", description: "Capture bills, receipts and voice notes from phone-first workflows." },
+  { label: "Accounting software for traders", href: "/solutions/accounting-software-for-traders/", description: "Reduce manual sales, purchase and bank entry work for trading businesses." },
+  { label: "Best accounting software India", href: "/resources/best-accounting-software-india/", description: "Compare popular accounting software categories in India." },
+  { label: "Vyapar alternative", href: "/alternatives/vyapar/", description: "Compare billing-first tools with capture-first entry preparation." },
+  { label: "Free GST calculator", href: "/tools/free-gst-calculator/", description: "Estimate GST values for sales and purchase context." }
+];
 ---
 
-<BaseLayout title={title} description={description} source="TallyPrime Alternative">
+<BaseLayout title={title} description={description} source="TallyPrime Alternative" breadcrumbs={breadcrumbs} faqs={faqs}>
+  <Breadcrumbs items={breadcrumbs} />
+
   <PageHero
     eyebrow="TallyPrime workflow alternative"
     title="A TallyPrime alternative for reducing daily accounts entry work."
@@ -15,6 +48,13 @@ const description = "Looking for a TallyPrime alternative to reduce manual accou
     source="TallyPrime Alternative"
     secondaryHref="/features/whatsapp-accounting/"
     secondaryLabel="See WhatsApp accounting"
+  />
+
+  <AnswerBlock
+    eyebrow="Direct answer"
+    title="Is Fastbooks a TallyPrime alternative?"
+    answer="Fastbooks is not positioned as a direct TallyPrime replacement. It is an accounts entry preparation layer for Indian businesses that want to reduce manual voucher entry. Businesses can capture bills, receipts, voice notes and bank rows in Fastbooks, then review prepared sales, purchase, expense and bank entries before final posting."
+    bullets={["Keep accountant control.", "Reduce daily manual data entry.", "Capture business activity before context is lost."]}
   />
 
   <section class="section-soft"><div class="inner">
@@ -40,13 +80,10 @@ const description = "Looking for a TallyPrime alternative to reduce manual accou
   </section>
 
   <section class="section-soft"><div class="inner">
-    <div class="section-heading"><p class="eyebrow">FAQ</p><h2>TallyPrime alternative questions</h2></div>
-    <div class="faq">
-      <details open><summary>Is Fastbooks replacing TallyPrime?</summary><p>Not necessarily. The sharper positioning is that Fastbooks reduces daily accounting entry preparation. Accountants can still review the final accounts process.</p></details>
-      <details><summary>Why would a business need Fastbooks if it already uses Tally?</summary><p>Because the daily data-entry layer is still painful: bills, expenses, bank transactions, narration and party matching. Fastbooks targets that capture-and-prepare workflow.</p></details>
-      <details><summary>Can accountants use Fastbooks?</summary><p>Yes. The review inbox is designed for accountants who need control before entries become final.</p></details>
-    </div>
+    <div class="section-heading"><p class="eyebrow">Example workflow</p><h2>From bank narration to review-ready receipt draft.</h2><p>A business receives “NEFT RECEIVED SHARMA TRADERS ₹85,000.” Instead of manually creating a receipt voucher later, Fastbooks can prepare a draft receipt entry with party and invoice match suggestions for accountant review.</p></div>
   </div></section>
 
+  <FAQSection faqs={faqs} title="TallyPrime alternative questions" />
+  <RelatedLinks links={relatedLinks} />
   <WhatsAppCTA source="TallyPrime Alternative" />
 </BaseLayout>

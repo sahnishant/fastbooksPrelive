@@ -4,57 +4,142 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import { site } from "../data/site";
 
+type Crumb = {
+  name: string;
+  href: string;
+};
+
+type FAQ = {
+  question: string;
+  answer: string;
+};
+
 const {
   title = site.defaultTitle,
   description = site.defaultDescription,
   canonical,
   source = title,
-  pageType = "WebPage"
-} = Astro.props;
+  pageType = "WebPage",
+  breadcrumbs = [],
+  faqs = [],
+  datePublished = "2026-06-03",
+  dateModified = new Date().toISOString().slice(0, 10),
+  authorName = "Fastbooks",
+  ogImage = site.defaultOgImage
+} = Astro.props as {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  source?: string;
+  pageType?: string;
+  breadcrumbs?: Crumb[];
+  faqs?: FAQ[];
+  datePublished?: string;
+  dateModified?: string;
+  authorName?: string;
+  ogImage?: string;
+};
 
-const canonicalUrl = canonical ? new URL(canonical, site.url).href : new URL(Astro.url.pathname, site.url).href;
+const canonicalUrl = canonical
+  ? new URL(canonical, site.url).href
+  : new URL(Astro.url.pathname, site.url).href;
+
+const ogImageUrl = ogImage
+  ? new URL(ogImage, site.url).href
+  : undefined;
+
+const graph: Record<string, unknown>[] = [
+  {
+    "@type": "Organization",
+    "@id": `${site.url}/#organization`,
+    "name": site.name,
+    "url": site.url
+  },
+  {
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    "url": site.url,
+    "name": site.name,
+    "publisher": { "@id": `${site.url}/#organization` }
+  },
+  {
+    "@type": "SoftwareApplication",
+    "@id": `${site.url}/#software`,
+    "name": site.name,
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": site.url,
+    "description": site.defaultDescription,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/PreOrder"
+    }
+  },
+  {
+    "@type": pageType,
+    "@id": `${canonicalUrl}#webpage`,
+    "url": canonicalUrl,
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": `${site.url}/#website` },
+    "about": { "@id": `${site.url}/#software` }
+  }
+];
+
+if (breadcrumbs.length > 0) {
+  graph.push({
+    "@type": "BreadcrumbList",
+    "@id": `${canonicalUrl}#breadcrumbs`,
+    "itemListElement": breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": new URL(item.href, site.url).href
+    }))
+  });
+}
+
+if (faqs.length > 0) {
+  graph.push({
+    "@type": "FAQPage",
+    "@id": `${canonicalUrl}#faq`,
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  });
+}
+
+if (pageType === "Article") {
+  graph.push({
+    "@type": "Article",
+    "@id": `${canonicalUrl}#article`,
+    "headline": title,
+    "description": description,
+    "datePublished": datePublished,
+    "dateModified": dateModified,
+    "author": {
+      "@type": "Organization",
+      "name": authorName
+    },
+    "publisher": {
+      "@id": `${site.url}/#organization`
+    },
+    "mainEntityOfPage": {
+      "@id": `${canonicalUrl}#webpage`
+    }
+  });
+}
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": `${site.url}/#organization`,
-      "name": site.name,
-      "url": site.url
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${site.url}/#website`,
-      "url": site.url,
-      "name": site.name,
-      "publisher": { "@id": `${site.url}/#organization` }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": `${site.url}/#software`,
-      "name": site.name,
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web",
-      "url": site.url,
-      "description": site.defaultDescription,
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "INR",
-        "availability": "https://schema.org/PreOrder"
-      }
-    },
-    {
-      "@type": pageType,
-      "@id": `${canonicalUrl}#webpage`,
-      "url": canonicalUrl,
-      "name": title,
-      "description": description,
-      "isPartOf": { "@id": `${site.url}/#website` },
-      "about": { "@id": `${site.url}/#software` }
-    }
-  ]
+  "@graph": graph
 };
 ---
 
@@ -67,13 +152,25 @@ const structuredData = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
 
+    {site.googleSiteVerification && (
+      <meta name="google-site-verification" content={site.googleSiteVerification} />
+    )}
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={pageType === "Article" ? "article" : "website"} />
     <meta property="og:url" content={canonicalUrl} />
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+
     <meta name="theme-color" content="#0f172a" />
 
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+<script is:inline src="/assets/analytics.js" defer></script>
   </head>
   <body id="top">
     <Header source={source} />

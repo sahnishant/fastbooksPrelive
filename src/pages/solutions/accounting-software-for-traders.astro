@@ -1,13 +1,46 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import PageHero from "../../components/PageHero.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQSection from "../../components/FAQSection.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
 import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
 
 const title = "Accounting Software for Traders and Wholesalers | Fastbooks";
 const description = "Fastbooks helps traders, wholesalers and retail businesses prepare sales, purchase, expense and bank entries from bills, receipts and voice notes for accountant review.";
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Solutions", href: "/solutions/accounting-software-for-traders/" },
+  { name: "Accounting Software for Traders", href: "/solutions/accounting-software-for-traders/" }
+];
+const faqs = [
+  {
+    question: "What should accounting software for traders handle?",
+    answer: "Accounting software for traders should handle sales, purchase bills, bank receipts, vendor payments, outstanding balances, GST review and accountant approval. Fastbooks focuses on preparing these entries faster from daily business inputs."
+  },
+  {
+    question: "How can traders reduce manual accounts entry?",
+    answer: "Traders can reduce manual accounts entry by capturing bills, receipts, bank rows and voice notes as transactions happen. Fastbooks prepares draft sales, purchase, expense and bank entries for review."
+  },
+  {
+    question: "Does Fastbooks handle inventory for traders?",
+    answer: "Fastbooks should currently be positioned around accounting entry preparation and review. Inventory-specific claims should be kept conservative unless full inventory workflows are implemented and verified."
+  }
+];
+const relatedLinks = [
+  { label: "Bank reconciliation software", href: "/features/bank-reconciliation-software/", description: "Convert bank rows into receipt and payment drafts." },
+  { label: "GST accounting software", href: "/features/gst-accounting-software/", description: "Prepare GST-aware entries for accountant review." },
+  { label: "TallyPrime alternative", href: "/alternatives/tally-prime/", description: "Reduce daily entry friction without losing accountant control." },
+  { label: "Wholesale accounting software", href: "/solutions/wholesale-accounting-software/", description: "Credit sales, collections and supplier bill workflows." },
+  { label: "Retail accounting software", href: "/solutions/retail-accounting-software/", description: "Daily sales, expenses and bank entries for retail businesses." },
+  { label: "Best accounting software India", href: "/resources/best-accounting-software-india/", description: "See how Fastbooks fits among popular options." }
+];
 ---
 
-<BaseLayout title={title} description={description} source="Accounting Software for Traders">
+<BaseLayout title={title} description={description} source="Accounting Software for Traders" breadcrumbs={breadcrumbs} faqs={faqs}>
+  <Breadcrumbs items={breadcrumbs} />
+
   <PageHero
     eyebrow="Trade and wholesale accounts"
     title="Accounting software for traders, wholesalers and retail businesses."
@@ -15,6 +48,13 @@ const description = "Fastbooks helps traders, wholesalers and retail businesses 
     source="Accounting Software for Traders"
     secondaryHref="/features/bank-reconciliation-software/"
     secondaryLabel="See bank entry workflow"
+  />
+
+  <AnswerBlock
+    eyebrow="Direct answer"
+    title="What is the best accounting workflow for traders?"
+    answer="For Indian traders, the best accounting workflow is one that captures sales, purchase bills, collections, vendor payments and bank receipts as they happen, then sends review-ready entries to the accountant. Fastbooks is built around this capture-first workflow: bills, bank rows, receipts and voice notes become draft sales, purchase, expense and bank entries for review."
+    bullets={["Capture sales and purchase context early.", "Use bank rows to prepare receipt and payment drafts.", "Keep GST, party and ledger decisions reviewable."]}
   />
 
   <section class="section-soft"><div class="inner">
@@ -37,5 +77,16 @@ const description = "Fastbooks helps traders, wholesalers and retail businesses 
     </div>
   </section>
 
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading"><p class="eyebrow">Trader checklist</p><h2>What traders should evaluate before choosing accounts software.</h2></div>
+    <div class="card-grid">
+      <article class="card"><h3>Credit sales</h3><p>Can the workflow preserve customer and invoice context?</p></article>
+      <article class="card"><h3>Purchase bills</h3><p>Can supplier bills be captured before month-end?</p></article>
+      <article class="card"><h3>Bank receipts</h3><p>Can bank narration help prepare receipt entries and outstanding matches?</p></article>
+    </div>
+  </div></section>
+
+  <FAQSection faqs={faqs} title="Accounting software for traders FAQs" />
+  <RelatedLinks links={relatedLinks} />
   <WhatsAppCTA source="Accounting Software for Traders" />
 </BaseLayout>

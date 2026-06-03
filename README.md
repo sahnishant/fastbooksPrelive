@@ -108,3 +108,68 @@ This version adds:
 - Updated sitemap.xml
 
 See `SEO_ROADMAP.md`.
+
+## Pass 2: SEO Authority + AI Citation Hardening
+
+Implemented:
+- `src/components/AnswerBlock.astro`
+- `src/components/FAQSection.astro`
+- `src/components/RelatedLinks.astro`
+- `src/components/Breadcrumbs.astro`
+- BreadcrumbList schema support in `BaseLayout.astro`
+- FAQPage schema support in `BaseLayout.astro`
+- Article schema support for resource pages
+- WhatsApp CTA tracking attributes
+- Deepened priority pages:
+  - `/resources/best-accounting-software-india/`
+  - `/resources/most-used-accounting-software-india/`
+  - `/alternatives/tally-prime/`
+  - `/features/bank-reconciliation-software/`
+  - `/solutions/accounting-software-for-traders/`
+
+Verification run:
+
+```bash
+npm run check
+npm run build
+```
+
+Result:
+- `npm run check`: 0 errors, 1 Astro inline-script hint for JSON-LD output.
+- `npm run build`: success, 37 static pages built.
+
+
+## Pass 3: Launch + Measurement + Technical SEO Hardening
+
+Added:
+
+- `googleSiteVerification` and `defaultOgImage` in `src/data/site.ts`
+- Google verification meta support in `BaseLayout`
+- Open Graph and Twitter card support
+- `public/og/fastbooks-og.svg`
+- Analytics-ready CTA events
+- `public/assets/analytics.js`
+- `src/utils/tracking.ts`
+- `src/pages/404.astro`
+- `MEASUREMENT_PLAN.md`
+- `TECHNICAL_SEO_CHECKLIST.md`
+
+Events emitted:
+
+- `request_early_access_click`
+- `optional_details_submit`
+- `gst_calculator_used`
+
+Before deploy, replace:
+
+```ts
+ownerWhatsAppNumber: "91XXXXXXXXXX"
+```
+
+in:
+
+```text
+src/data/site.ts
+```
+
+with your actual WhatsApp number without `+`.

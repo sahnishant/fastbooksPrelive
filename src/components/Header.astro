@@ -18,7 +18,12 @@ const source = Astro.props.source ?? "Header";
     ))}
   </nav>
 
-  <a href={buildWhatsAppUrl(`${source} Header`)} class="button button-primary" target="_blank" rel="noopener noreferrer">
+  <a href={buildWhatsAppUrl(`${source} Header`)} class="button button-primary" target="_blank" rel="noopener noreferrer"
+    data-event="request_early_access_click"
+    data-page={source}
+    data-cta-location="header"
+    data-source={source}
+  >
     Request Early Access
   </a>
 </header>

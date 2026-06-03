@@ -10,7 +10,17 @@ const idSuffix = source.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$
   <h2>Want early access to Fastbooks?</h2>
   <p>Click once to message us on WhatsApp. You do not need to fill anything first.</p>
 
-  <a class="button button-primary" href={directUrl} target="_blank" rel="noopener noreferrer">
+  <a
+    class="button button-primary"
+    href={directUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    data-event="request_early_access_click"
+    data-page={source}
+    data-cta-location="whatsapp-cta-direct"
+    data-source={source}
+    data-target="whatsapp"
+  >
     Request Early Access
   </a>
 
@@ -44,12 +54,43 @@ const idSuffix = source.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$
       <textarea id={`need-${idSuffix}`} name="need" class="form-control" rows="3" placeholder="e.g., reduce purchase entry, bank entries, GST review, sales bills..."></textarea>
     </div>
 
-    <button type="submit" class="form-submit">Request Early Access</button>
+    <button
+      type="submit"
+      class="form-submit"
+      data-event="optional_details_submit"
+      data-page={source}
+      data-cta-location="whatsapp-cta-form"
+      data-source={source}
+      data-target="whatsapp"
+    >
+      Request Early Access
+    </button>
     <span class="form-note">All fields are optional. The message opens directly in WhatsApp.</span>
   </form>
 </section>
 
-<script define:vars={{ ownerWhatsAppNumber: site.ownerWhatsAppNumber }}>
+<script is:inline define:vars={{ ownerWhatsAppNumber: site.ownerWhatsAppNumber }}>
+  function trackFastbooksInline(payload) {
+    const normalizedPayload = { target: "whatsapp", ...payload };
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(normalizedPayload);
+
+    if (typeof window.gtag === "function") {
+      window.gtag("event", normalizedPayload.event, {
+        page: normalizedPayload.page,
+        cta_location: normalizedPayload.ctaLocation,
+        source: normalizedPayload.source,
+        target: normalizedPayload.target
+      });
+    }
+
+    window.dispatchEvent(
+      new CustomEvent("fastbooks:analytics", {
+        detail: normalizedPayload
+      })
+    );
+  }
+
   function openFastbooksWhatsApp(message) {
     const url = "https://wa.me/" + ownerWhatsAppNumber + "?text=" + encodeURIComponent(message);
     window.open(url, "_blank", "noopener,noreferrer");
@@ -68,6 +109,19 @@ const idSuffix = source.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$
       const email = form.querySelector("[name='email']")?.value.trim() || "";
       const need = form.querySelector("[name='need']")?.value.trim() || "";
       const source = form.querySelector("[name='source']")?.value || document.title;
+
+      trackFastbooksInline({
+        event: "optional_details_submit",
+        page: source,
+        ctaLocation: "whatsapp-cta-form",
+        source,
+        target: "whatsapp",
+        hasName: Boolean(name),
+        hasCompany: Boolean(company),
+        hasPhone: Boolean(phone),
+        hasEmail: Boolean(email),
+        hasNeed: Boolean(need)
+      });
 
       const lines = [
         "Hi, I want early access to Fastbooks.",

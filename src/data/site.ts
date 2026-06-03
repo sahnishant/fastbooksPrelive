@@ -2,7 +2,9 @@ export const site = {
   name: "Fastbooks",
   url: "https://www.fastbooks.in",
   tagline: "Accounting without daily entry",
-  ownerWhatsAppNumber: "91XXXXXXXXXX",
+  ownerWhatsAppNumber: "919472612333",
+  googleSiteVerification: "",
+  defaultOgImage: "/og/fastbooks-og.svg",
   defaultTitle: "Fastbooks | Accounting Software for Indian Businesses",
   defaultDescription:
     "Fastbooks is accounting software for Indian businesses. Capture bills, receipts, bank transactions and voice notes. Prepare sales, purchase, expense and bank entries for accountant review.",
