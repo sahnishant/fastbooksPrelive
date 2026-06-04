@@ -6,11 +6,13 @@ interface FAQItem {
 interface Props {
   eyebrow?: string;
   title?: string;
+  intro?: string;
   faqs?: FAQItem[];
 }
 const {
   eyebrow = "FAQ",
   title = "Frequently asked questions",
+  intro = "",
   faqs = []
 } = Astro.props as Props;
 ---
@@ -21,11 +23,12 @@ const {
       <div class="section-heading">
         <p class="eyebrow">{eyebrow}</p>
         <h2>{title}</h2>
+        {intro && <p>{intro}</p>}
       </div>
       <div class="faq">
         {faqs.map((faq: FAQItem, index: number) => (
           <details open={index === 0}>
-            <summary>{faq.question}</summary>
+            <summary data-analytics="faq-toggle">{faq.question}</summary>
             <p>{faq.answer}</p>
           </details>
         ))}

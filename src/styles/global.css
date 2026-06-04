@@ -220,6 +220,12 @@ a {
   font-weight: 650;
 }
 
+.cta-trust-note {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
 .check-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -246,51 +246,6 @@ export const featurePages: SeoPage[] = [
 
 export const alternativePages: SeoPage[] = [
   {
-    slug: "zoho-books",
-    title: "Zoho Books Alternative for Indian Businesses | Fastbooks",
-    description: "Compare Zoho Books-style cloud accounting with Fastbooks' phone-first accounts entry preparation for Indian businesses.",
-    eyebrow: "Zoho Books alternative",
-    h1: "A Zoho Books alternative for businesses that want faster daily accounts capture.",
-    intro: "Zoho Books is a strong cloud accounting product. Fastbooks focuses on reducing daily entry preparation from bills, receipts, bank rows and voice notes.",
-    ctaSource: "Zoho Books Alternative",
-    sections: [
-      { title: "Cloud accounting vs capture layer", body: "Fastbooks is positioned around quick input capture and review-ready entry drafts." },
-      { title: "Indian accounts language", body: "The workflow uses sales, purchase, expense, bank entries, GST review and accountant approval." },
-      { title: "Best fit", body: "Use this page for users searching for simpler or more capture-focused alternatives." }
-    ],
-    bullets: ["Cloud alternative", "Daily capture", "Sales entries", "Purchase entries", "Bank entries", "GST review"]
-  },
-  {
-    slug: "vyapar",
-    title: "Vyapar Alternative for Indian Businesses | Fastbooks",
-    description: "Compare Vyapar-style billing and accounting with Fastbooks' WhatsApp-first accounts entry preparation and accountant review workflow.",
-    eyebrow: "Vyapar alternative",
-    h1: "A Vyapar alternative for businesses that want less manual accounts entry.",
-    intro: "Vyapar is popular among Indian small businesses for billing and basic accounts. Fastbooks focuses on capture-first accounting entry preparation.",
-    ctaSource: "Vyapar Alternative",
-    sections: [
-      { title: "Billing vs accounts capture", body: "Fastbooks targets bills, bank rows, receipts and voice notes as raw inputs for accounting entries." },
-      { title: "Review layer", body: "Accountants can review entries before final approval." },
-      { title: "Phone-first workflow", body: "The main interaction can start from WhatsApp-style inputs." }
-    ],
-    bullets: ["Billing context", "WhatsApp inputs", "Expense entries", "Bank entries", "GST hints", "Review inbox"]
-  },
-  {
-    slug: "mybillbook",
-    title: "myBillBook Alternative for Indian Businesses | Fastbooks",
-    description: "Compare myBillBook-style billing and accounting with Fastbooks' accounting entry preparation from bills, bank transactions and voice notes.",
-    eyebrow: "myBillBook alternative",
-    h1: "A myBillBook alternative for businesses focused on reducing accounts entry work.",
-    intro: "myBillBook is strong around billing, GST and MSME workflows. Fastbooks' angle is faster accounting capture and accountant-ready drafts.",
-    ctaSource: "myBillBook Alternative",
-    sections: [
-      { title: "Business-owner workflow", body: "Fastbooks helps capture transaction context before it becomes a backlog." },
-      { title: "Accountant review", body: "Review-first positioning protects trust in accounts." },
-      { title: "Different angle", body: "Not just billing: Fastbooks focuses on sales, purchase, expense and bank entry preparation." }
-    ],
-    bullets: ["MSME accounts", "Bill capture", "Voice notes", "Bank rows", "Draft entries", "Review layer"]
-  },
-  {
     slug: "busy-accounting-software",
     title: "Busy Accounting Software Alternative | Fastbooks",
     description: "Fastbooks is a phone-first accounts capture and entry preparation layer for businesses comparing Busy accounting software alternatives.",

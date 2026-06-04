@@ -1,6 +1,6 @@
 export const whatsappConfig = {
   phoneNumber: "919472612333",
-  message: "Hi, I want early access to Fastbooks. Please contact me."
+  message: "Hi, I want early access to FastBooks for my business. Please contact me."
 };
 
 export const site = {
@@ -11,8 +11,7 @@ export const site = {
   googleSiteVerification: "",
   defaultOgImage: "/og/fastbooks-og.svg",
   defaultTitle: "Fastbooks | Accounting Software for Indian Businesses",
-  defaultDescription:
-    "Fastbooks converts bills, receipts, bank transactions, and voice notes into accountant-ready accounting entries for Indian businesses to review.",
+    defaultDescription: "Fastbooks turns bills, receipts, bank transactions, and voice notes into accountant-ready entries for Indian businesses.",
   nav: [
     { label: "Best Software", href: "/resources/best-accounting-software-india/" },
     { label: "Tally Alternative", href: "/alternatives/tally-prime/" },
@@ -45,6 +44,8 @@ export const footerLinks = {
     { label: "TallyPrime alternative", href: "/alternatives/tally-prime/" },
     { label: "Zoho Books alternative", href: "/alternatives/zoho-books/" },
     { label: "Vyapar alternative", href: "/alternatives/vyapar/" },
+    { label: "Refrens alternative", href: "/alternatives/refrens/" },
+    { label: "myBillBook alternative", href: "/alternatives/mybillbook/" },
     { label: "Free GST calculator", href: "/tools/free-gst-calculator/" },
     { label: "Privacy Policy", href: "/privacy/" },
     { label: "Terms of Use", href: "/terms/" }

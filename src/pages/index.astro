@@ -3,21 +3,109 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CheckIcon from "../components/CheckIcon.astro";
 import MockEntryCard from "../components/MockEntryCard.astro";
 import WhatsAppCTA from "../components/WhatsAppCTA.astro";
+import StickyWhatsAppCTA from "../components/StickyWhatsAppCTA.astro";
+import FAQSection from "../components/FAQSection.astro";
+import RelatedLinks from "../components/RelatedLinks.astro";
 import { buildWhatsAppUrl } from "../data/site";
 
-const title = "Fastbooks | Accounting Software for Indian Businesses";
-const description = "Fastbooks is accounting software for Indian businesses. Capture bills, receipts, bank transactions and voice notes. Prepare sales, purchase, expense and bank entries for accountant review.";
+const faqs = [
+  {
+    question: "Will my accountant accept this?",
+    answer: "Fastbooks is designed for accountant-led review, not blind auto-posting. The intended workflow is that owners or staff capture bills, receipts, bank rows, and voice notes, while the accountant reviews the prepared entries before final approval."
+  },
+  {
+    question: "Can I export to Tally?",
+    answer: "Many Indian businesses already use Tally or Tally-style workflows. Fastbooks is being built to fit accountant-friendly handoff and export/sync workflows where practical. During early access, we will first understand your current setup and confirm the safest workflow."
+  },
+  {
+    question: "Can I upload bank statements?",
+    answer: "Fastbooks is being built around bank-entry preparation. The intended workflow is to read bank statement rows or transaction text and prepare receipt/payment drafts for review. Supported formats and banks should be confirmed during onboarding."
+  },
+  {
+    question: "Which banks are supported?",
+    answer: "During early access, support may be rolled out bank by bank. The target is to handle common Indian bank statement patterns and transaction narrations, but exact bank support should be confirmed before relying on it for production work."
+  },
+  {
+    question: "Does Fastbooks auto-post accounting entries?",
+    answer: "No. Fastbooks should not blindly post entries. The product direction is “AI prepares, humans approve.” Prepared entries should be checked by the business owner, accountant, or CA before final posting."
+  },
+  {
+    question: "What happens when AI is unsure?",
+    answer: "Unclear entries should remain in review. Fastbooks should show hints, warnings, or missing information instead of pretending every entry is correct. The reviewer can correct party, ledger, GST treatment, narration, amount, or entry type before approval."
+  },
+  {
+    question: "Can I use Fastbooks only for review and not final books?",
+    answer: "Yes. Fastbooks can be used as a preparation and review layer. This is useful for businesses that already maintain final books elsewhere but want cleaner input capture and reduced manual entry work."
+  },
+  {
+    question: "Can multiple staff members send bills or transaction details?",
+    answer: "The intended workflow supports business teams where owners or staff capture transaction context early. During early access, team/member access and exact permissions should be confirmed based on your business setup."
+  },
+  {
+    question: "Is WhatsApp mandatory?",
+    answer: "No. WhatsApp is the easiest early-access contact and capture habit for many businesses, but the product should not be positioned as WhatsApp-only unless technically required. Phrase it as WhatsApp-style capture or phone-first capture."
+  },
+  {
+    question: "Can I delete my data or request removal?",
+    answer: "Yes, users should be able to request deletion or removal of information shared during early access. Requests can be made by contacting the Fastbooks team."
+  },
+  {
+    question: "Does Fastbooks support voice notes?",
+    answer: "Voice-note-style capture is part of the product direction. During early access, we will confirm what kinds of voice inputs work reliably."
+  },
+  {
+    question: "Does Fastbooks support Hindi or mixed-language inputs?",
+    answer: "Hindi or mixed-language support should be confirmed during onboarding. Do not rely on it for production accounting until tested on your actual workflow."
+  },
+  {
+    question: "Is Fastbooks safe for GST accounting?",
+    answer: "Fastbooks can prepare GST-related hints and review fields, but final GST treatment should always be verified by an accountant or CA. Do not position AI as a replacement for tax review."
+  },
+  {
+    question: "Is Fastbooks only for small businesses?",
+    answer: "Fastbooks is mainly designed for Indian small businesses, traders, wholesalers, retailers, manufacturers, and accountants who need faster daily accounting preparation. Larger businesses may need custom workflows."
+  },
+  {
+    question: "What happens after I request early access?",
+    answer: "You will message the Fastbooks team on WhatsApp. The team will understand your business workflow, current accounting setup, bank/import needs, and whether early access is suitable."
+  }
+];
+
+const relatedLinks = [
+  { label: "TallyPrime alternative", href: "/alternatives/tally-prime/", description: "A Tally alternative for faster voucher preparation — not blind replacement." },
+  { label: "Zoho Books alternative", href: "/alternatives/zoho-books/", description: "A Zoho Books alternative for faster daily accounts capture." },
+  { label: "Vyapar alternative", href: "/alternatives/vyapar/", description: "A Vyapar alternative for businesses that need more than fast billing." },
+  { label: "Refrens alternative", href: "/alternatives/refrens/", description: "A Refrens alternative for accounts preparation beyond invoicing." },
+  { label: "myBillBook alternative", href: "/alternatives/mybillbook/", description: "A myBillBook alternative for review-ready accounting entries." },
+  { label: "Bank reconciliation software", href: "/features/bank-reconciliation-software/", description: "Prepare receipt and payment drafts from bank statement text." },
+  { label: "WhatsApp accounting", href: "/features/whatsapp-accounting/", description: "Capture bills, receipts and voice notes from phone-first workflows." },
+  { label: "GST accounting software", href: "/features/gst-accounting-software/", description: "Reduce manual sales, purchase and bank entry work for trading businesses." },
+  { label: "Accounting software for accountants", href: "/solutions/accounting-software-for-accountants/", description: "Let clients capture context while you retain review control." },
+  { label: "Accounting software for traders", href: "/solutions/accounting-software-for-traders/", description: "Simplify daily capture and review for retail & wholesale trade." }
+];
+
+const faqIntro = "Fastbooks is in early access. These answers explain the intended workflow clearly: Fastbooks prepares accounting drafts, but humans stay in control.";
+
+const title = "Simple GST Billing & Accounting Software for Indian Small Businesses | Fastbooks";
+const description = "Fastbooks is a simple GST billing and accounting product for Indian traders, retailers, wholesalers, and accountants. Request early access on WhatsApp.";
 ---
 
-<BaseLayout title={title} description={description} source="Homepage">
+<BaseLayout title={title} description={description} source="Homepage" faqs={faqs}>
   <section class="section hero">
     <div>
       <p class="eyebrow">Private early access</p>
-      <h1>Accounting without daily data entry.</h1>
-      <p class="hero-subtitle">Send bills, receipts, bank transactions or voice notes. Fastbooks converts them into accountant-ready accounting entries for review.</p>
-      <div class="positioning-pill">Built for Indian businesses and accountants.</div>
+      <h1>Simple GST Billing &amp; Accounting Software for Indian Small Businesses</h1>
+      <p class="hero-subtitle">Send bills, receipts, bank transactions or voice notes. Fastbooks converts them into accountant‑ready accounting entries for review.</p>
       <div class="hero-actions">
-        <a class="button button-primary" href={buildWhatsAppUrl()} target="_blank" rel="noopener noreferrer" data-event="request_early_access_click" data-page="Homepage" data-cta-location="hero" data-source="Homepage Hero" data-target="whatsapp">Request Early Access</a>
+        <a class="button button-primary" href={buildWhatsAppUrl()} target="_blank" rel="noopener noreferrer"
+          data-event="request_early_access_click"
+          data-page="Homepage"
+          data-cta-location="hero"
+          data-source="Homepage Hero"
+          data-target="whatsapp"
+          data-analytics="hero-whatsapp-cta">
+          Get Early Access on WhatsApp
+        </a>
         <a class="button button-secondary" href="/alternatives/tally-prime/">See Tally workflow page</a>
       </div>
       <span class="microcopy">Takes less than 30 seconds. Opens directly in WhatsApp. We respect your privacy.</span>
@@ -32,7 +120,7 @@ const description = "Fastbooks is accounting software for Indian businesses. Cap
     <MockEntryCard />
   </section>
 
-  <section class="section-soft">
+  <section class="section-soft" data-analytics="section-benefits-view">
     <div class="inner">
       <div class="section-heading">
         <p class="eyebrow">Who Fastbooks is for</p>
@@ -63,7 +151,7 @@ const description = "Fastbooks is accounting software for Indian businesses. Cap
     </div>
   </section>
 
-  <section class="section-soft">
+  <section class="section-soft" data-analytics="section-workflow-view">
     <div class="inner">
       <div class="section-heading">
         <p class="eyebrow">Before vs After</p>
@@ -107,5 +195,8 @@ const description = "Fastbooks is accounting software for Indian businesses. Cap
     </div>
   </section>
 
+  <RelatedLinks links={relatedLinks} title="Explore comparison and feature guides" eyebrow="Resources" />
+  <FAQSection faqs={faqs} title="Frequently asked questions" intro={faqIntro} />
   <WhatsAppCTA source="Homepage" />
+  <StickyWhatsAppCTA />
 </BaseLayout>
