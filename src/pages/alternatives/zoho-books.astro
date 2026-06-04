@@ -1,0 +1,173 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQSection from "../../components/FAQSection.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+
+const title = "Zoho Books Alternative for Indian Businesses | Fastbooks";
+const description = "Compare Zoho Books cloud accounting with Fastbooks' capture-first accounts entry preparation. Turn bills, receipts, bank rows and voice notes into review-ready drafts.";
+
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Alternatives", href: "/alternatives/zoho-books/" },
+  { name: "Zoho Books Alternative", href: "/alternatives/zoho-books/" }
+];
+
+const faqs = [
+  {
+    question: "Is Fastbooks a Zoho Books replacement?",
+    answer: "Not directly. Zoho Books is a full cloud accounting platform. Fastbooks focuses on quick transaction capture and review-ready accounting preparation for Indian businesses."
+  },
+  {
+    question: "Why compare Fastbooks with Zoho Books?",
+    answer: "Because many businesses searching for cloud accounting still have a first-mile problem: bills, expenses, receipts, payments, and bank rows are not captured cleanly before accounting begins."
+  },
+  {
+    question: "Does Fastbooks support GST workflows?",
+    answer: "Fastbooks is being built around Indian GST billing and accounting workflows. GST hints should be reviewed by an accountant before final treatment."
+  },
+  {
+    question: "Can my accountant use Fastbooks with me?",
+    answer: "Yes. The intended flow is owner/staff capture first, accountant review later. This is the main collaboration advantage."
+  }
+];
+
+const relatedLinks = [
+  { label: "Bank reconciliation software", href: "/features/bank-reconciliation-software/", description: "Prepare receipt and payment drafts from bank statement text." },
+  { label: "WhatsApp accounting", href: "/features/whatsapp-accounting/", description: "Capture bills, receipts and voice notes from phone-first workflows." },
+  { label: "GST accounting software", href: "/features/gst-accounting-software/", description: "Reduce manual sales, purchase and bank entry work." },
+  { label: "Accounting software for accountants", href: "/solutions/accounting-software-for-accountants/", description: "Let clients capture context while you retain review control." },
+  { label: "Accounting software for traders", href: "/solutions/accounting-software-for-traders/", description: "Simplify daily capture and review for retail & wholesale trade." }
+];
+---
+
+<BaseLayout title={title} description={description} source="Zoho Books Alternative" breadcrumbs={breadcrumbs} faqs={faqs}>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <PageHero
+    eyebrow="Zoho Books alternative"
+    title="A Zoho Books alternative for Indian businesses that need faster daily accounts capture."
+    subtitle="Zoho Books is a strong cloud accounting platform. Fastbooks focuses on a different pain: capturing Indian business transactions early and preparing review-ready entries from bills, receipts, bank rows, and voice notes."
+    source="Zoho Books Alternative"
+    secondaryHref="/features/whatsapp-accounting/"
+    secondaryLabel="See WhatsApp accounting"
+  />
+
+  <AnswerBlock
+    eyebrow="Direct answer"
+    title="Is Fastbooks a Zoho Books alternative?"
+    answer="Fastbooks is not a direct replacement for Zoho Books' cloud suite. Fastbooks is an accounts capture and entry preparation layer that simplifies the first mile of data entry. Staff and owners capture transaction context on the fly, and Fastbooks prepares draft entries that can be reviewed before posting."
+    bullets={["Capture messy transaction context easily.", "Prepare review-ready drafts instead of typing vouchers.", "Keep accountants in review control."]}
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">The Capture Angle</p>
+      <h2>Cloud accounting vs Indian daily-entry capture</h2>
+      <p>Cloud accounting solves access and collaboration. But many Indian businesses still struggle with raw transaction capture: a staff member pays cash, a customer sends UPI, a supplier bill arrives on WhatsApp, and bank narrations need interpretation. Fastbooks is designed for that messy first mile. It helps turn informal business inputs into structured accounting drafts that an owner or accountant can review.</p>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Workflow comparison</p>
+      <h2>Zoho Books-style cloud accounting vs Fastbooks capture-first accounting preparation</h2>
+    </div>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Zoho Books-style cloud accounting</th>
+          <th>Fastbooks capture-first preparation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Core model</strong></td>
+          <td>Full cloud accounting system.</td>
+          <td>Capture-first preparation layer for accounting entries.</td>
+        </tr>
+        <tr>
+          <td><strong>Daily input capture</strong></td>
+          <td>Users generally enter transactions inside the accounting system.</td>
+          <td>Users can start from bills, receipts, bank rows, and voice notes.</td>
+        </tr>
+        <tr>
+          <td><strong>GST workflow</strong></td>
+          <td>GST features inside a cloud accounting product.</td>
+          <td>GST hints and review status attached to prepared drafts for accountant approval.</td>
+        </tr>
+        <tr>
+          <td><strong>Owner-accountant collaboration</strong></td>
+          <td>Collaboration happens inside the accounting product.</td>
+          <td>Owner/staff capture context quickly; accountant reviews prepared entries.</td>
+        </tr>
+        <tr>
+          <td><strong>Bank and receipt handling</strong></td>
+          <td>Bank data still needs categorisation and matching.</td>
+          <td>Bank rows can become receipt/payment drafts with party/invoice suggestions where possible.</td>
+        </tr>
+        <tr>
+          <td><strong>Best fit</strong></td>
+          <td>Teams ready to run accounting directly in a cloud suite.</td>
+          <td>Indian businesses that need a simpler front-office capture and accountant-review flow.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div></section>
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Messy to structured</p>
+      <h2>The Fastbooks angle: messy input to review-ready draft</h2>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <h3>WhatsApp-style business context</h3>
+        <p>Many real transactions begin as photos, messages, and voice notes. Fastbooks is designed around that behaviour.</p>
+      </article>
+      <article class="card">
+        <h3>Bank rows need accounting meaning</h3>
+        <p>A transaction row is not enough. Fastbooks prepares draft meaning: receipt, payment, party, amount, and narration.</p>
+      </article>
+      <article class="card">
+        <h3>GST should be reviewed</h3>
+        <p>Fastbooks should show GST and ledger hints, but final tax treatment must stay under accountant review.</p>
+      </article>
+      <article class="card">
+        <h3>Owner and accountant both fit</h3>
+        <p>Owners capture context. Accountants approve accounting treatment.</p>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Honest fit</p>
+      <h2>Fastbooks may not be the right fit if:</h2>
+    </div>
+    <div class="card-grid two">
+      <article class="card">
+        <h3>You need simple billing or ERP</h3>
+        <ul>
+          <li>You only need simple invoice creation.</li>
+          <li>You want a mature full-suite accounting system today.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>You want hands-off automation</h3>
+        <ul>
+          <li>You want a fully automatic posting system with no review.</li>
+          <li>Your current accounting team does not want a review-first workflow.</li>
+        </ul>
+      </article>
+    </div>
+  </div></section>
+
+  <FAQSection faqs={faqs} title="Zoho Books alternative questions" />
+  <RelatedLinks links={relatedLinks} />
+  <WhatsAppCTA source="Zoho Books Alternative" />
+</BaseLayout>

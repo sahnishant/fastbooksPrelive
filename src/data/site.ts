@@ -44,6 +44,8 @@ export const footerLinks = {
     { label: "TallyPrime alternative", href: "/alternatives/tally-prime/" },
     { label: "Zoho Books alternative", href: "/alternatives/zoho-books/" },
     { label: "Vyapar alternative", href: "/alternatives/vyapar/" },
+    { label: "Refrens alternative", href: "/alternatives/refrens/" },
+    { label: "myBillBook alternative", href: "/alternatives/mybillbook/" },
     { label: "Free GST calculator", href: "/tools/free-gst-calculator/" },
     { label: "Privacy Policy", href: "/privacy/" },
     { label: "Terms of Use", href: "/terms/" }

@@ -1,0 +1,165 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQSection from "../../components/FAQSection.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+
+const title = "myBillBook Alternative for Review-Ready Accounting Entries | Fastbooks";
+const description = "Compare myBillBook billing app with Fastbooks' capture-first accounts entry preparation. Prepare sales, purchases, bank entries and expenses for review.";
+
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Alternatives", href: "/alternatives/tally-prime/" }, // using tally-prime as parent since it's the main alt page
+  { name: "myBillBook Alternative", href: "/alternatives/mybillbook/" }
+];
+
+const faqs = [
+  {
+    question: "Is Fastbooks a myBillBook replacement?",
+    answer: "Not directly. myBillBook-style tools are strong for billing and inventory-led operations. Fastbooks is positioned around accounting entry preparation and accountant review."
+  },
+  {
+    question: "Does Fastbooks handle retail businesses?",
+    answer: "Yes, Fastbooks can be positioned for retail and wholesale businesses where sales, purchases, expenses, receipts, payments, and bank entries need review-ready preparation."
+  },
+  {
+    question: "Is inventory the main Fastbooks feature?",
+    answer: "No. Keep this honest. Fastbooks may support inventory-linked accounting workflows, but the core strength is reducing manual accounting-entry preparation."
+  }
+];
+
+const relatedLinks = [
+  { label: "Bank reconciliation software", href: "/features/bank-reconciliation-software/", description: "Prepare receipt and payment drafts from bank statement text." },
+  { label: "WhatsApp accounting", href: "/features/whatsapp-accounting/", description: "Capture bills, receipts and voice notes from phone-first workflows." },
+  { label: "GST accounting software", href: "/features/gst-accounting-software/", description: "Reduce manual sales, purchase and bank entry work." },
+  { label: "Accounting software for accountants", href: "/solutions/accounting-software-for-accountants/", description: "Let clients capture context while you retain review control." },
+  { label: "Accounting software for traders", href: "/solutions/accounting-software-for-traders/", description: "Simplify daily capture and review for retail & wholesale trade." }
+];
+---
+
+<BaseLayout title={title} description={description} source="myBillBook Alternative" breadcrumbs={breadcrumbs} faqs={faqs}>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <PageHero
+    eyebrow="myBillBook alternative"
+    title="A myBillBook alternative for businesses that need review-ready accounting entries, not only retail billing."
+    subtitle="myBillBook is known for GST billing, inventory, payments, reports, and small-business workflows. Fastbooks focuses on turning daily business inputs into accountant-ready entries for review."
+    source="myBillBook Alternative"
+    secondaryHref="/features/whatsapp-accounting/"
+    secondaryLabel="See WhatsApp accounting"
+  />
+
+  <AnswerBlock
+    eyebrow="Direct answer"
+    title="Is Fastbooks a myBillBook alternative?"
+    answer="Fastbooks works on a different level. myBillBook is widely adopted by retailers and wholesalers for inventory management, billing, and stock levels. Fastbooks is built for capture-and-prepare scenarios. It targets manual accounting-entry reduction by preparing structured drafts (sales, purchases, expenses, payments, bank receipts) for accountant review, rather than POS inventory transactions."
+    bullets={["Capture messy real-world inputs early.", "Focused on accountant-ready review drafts.", "Keeps final postings under strict human check."]}
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">The Retail/Wholesale Handoff</p>
+      <h2>Retail billing is important. Accountant-ready entries are a different workflow.</h2>
+      <p>A retail or wholesale business may need fast billing and stock tracking. But the accountant still needs clean sales, purchase, expense, receipt, payment, bank, and GST-review data. Fastbooks focuses on this handoff. Owners and staff can capture what happened. Fastbooks prepares structured drafts. The accountant reviews before final posting.</p>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Workflow comparison</p>
+      <h2>myBillBook-style retail billing vs Fastbooks review-ready accounting preparation</h2>
+    </div>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>myBillBook-style retail billing</th>
+          <th>Fastbooks review-ready preparation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Main strength</strong></td>
+          <td>GST billing, inventory, payment tracking, business reports.</td>
+          <td>Accounting entry drafts from daily business inputs.</td>
+        </tr>
+        <tr>
+          <td><strong>Best user</strong></td>
+          <td>Retailers, wholesalers, and distributors who need fast billing and stock tools.</td>
+          <td>Businesses and accountants who want cleaner accounts preparation from bills, receipts, bank rows, and voice notes.</td>
+        </tr>
+        <tr>
+          <td><strong>Inventory angle</strong></td>
+          <td>Inventory and billing are central.</td>
+          <td>Inventory-linked accounting may be useful, but the core wedge is review-ready accounting entries.</td>
+        </tr>
+        <tr>
+          <td><strong>Accountant handoff</strong></td>
+          <td>Business records are maintained in the billing/accounting app.</td>
+          <td>Drafts are prepared for accountant review and correction.</td>
+        </tr>
+        <tr>
+          <td><strong>Bank entries</strong></td>
+          <td>Payments and collections are tracked.</td>
+          <td>Bank rows can be interpreted into receipt/payment drafts with review status.</td>
+        </tr>
+        <tr>
+          <td><strong>Best fit</strong></td>
+          <td>Businesses that primarily want billing, stock, and payment collection.</td>
+          <td>Businesses that want to reduce manual accounting-entry preparation and improve accountant collaboration.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div></section>
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Better entries</p>
+      <h2>Ensuring clean audit trails</h2>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <h3>For retail and wholesale context</h3>
+        <p>Fastbooks can help when sales, purchases, receipts, payments, and expenses need to become clean accounting records.</p>
+      </article>
+      <article class="card">
+        <h3>For accountant-led businesses</h3>
+        <p>The accountant should not have to reconstruct everything from scattered bills and bank rows. Fastbooks prepares the review queue.</p>
+      </article>
+      <article class="card">
+        <h3>For cautious automation</h3>
+        <p>Fastbooks should not auto-post uncertain entries. It should keep uncertain items in review.</p>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Honest fit</p>
+      <h2>Fastbooks may not be the right fit if:</h2>
+    </div>
+    <div class="card-grid two">
+      <article class="card">
+        <h3>You need simple billing or ERP</h3>
+        <ul>
+          <li>You only need simple invoice creation.</li>
+          <li>You want a mature full-suite accounting system today.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>You want hands-off automation</h3>
+        <ul>
+          <li>You want a fully automatic posting system with no review.</li>
+          <li>Your current accounting team does not want a review-first workflow.</li>
+        </ul>
+      </article>
+    </div>
+  </div></section>
+
+  <FAQSection faqs={faqs} title="myBillBook alternative questions" />
+  <RelatedLinks links={relatedLinks} />
+  <WhatsAppCTA source="myBillBook Alternative" />
+</BaseLayout>
