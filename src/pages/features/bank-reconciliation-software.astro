@@ -6,6 +6,12 @@ import AnswerBlock from "../../components/AnswerBlock.astro";
 import FAQSection from "../../components/FAQSection.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+import ProductProofSection from "../../components/ProductProofSection.astro";
+import { productProofAssets } from "../../data/productProof";
+
+const bankProofItems = productProofAssets.filter((item) =>
+  ["bank-row-to-receipt-payment-draft", "review-inbox-accountant-approval"].includes(item.id)
+);
 
 const title = "Bank Reconciliation Software India | Fastbooks";
 const description = "Fastbooks helps Indian businesses prepare receipt and payment entries from bank statement rows with party and invoice match suggestions for accountant review.";
@@ -77,6 +83,14 @@ const relatedLinks = [
       </tbody>
     </table>
   </section>
+
+  <ProductProofSection
+    eyebrow="Product proof"
+    title="Bank statement proof screens to add next"
+    intro="These placeholder panels reserve space for real Fastbooks product screenshots showing bank statement rows and accountant review queue."
+    items={bankProofItems}
+    layout="grid"
+  />
 
   <FAQSection faqs={faqs} title="Bank reconciliation software FAQs" />
   <RelatedLinks links={relatedLinks} />

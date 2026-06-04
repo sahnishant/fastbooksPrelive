@@ -2,6 +2,12 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
 import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+import ProductProofSection from "../../components/ProductProofSection.astro";
+import { productProofAssets } from "../../data/productProof";
+
+const gstProofItems = productProofAssets.filter((item) =>
+  ["bill-photo-to-purchase-draft", "gst-ledger-hints-review"].includes(item.id)
+);
 
 const title = "GST Accounting Software for Indian Businesses | Fastbooks";
 const description = "Fastbooks prepares GST-aware sales, purchase and expense accounting entries from bills, receipts and voice notes for accountant review.";
@@ -29,6 +35,14 @@ const description = "Fastbooks prepares GST-aware sales, purchase and expense ac
   <section class="section">
     <div class="section-heading"><p class="eyebrow">Important positioning</p><h2>GST compliance needs control.</h2><p>Fastbooks should be positioned as a preparation and review layer. Do not claim automatic GST filing unless the product actually supports it end-to-end.</p></div>
   </section>
+
+  <ProductProofSection
+    eyebrow="Product proof"
+    title="GST review proof screens to add next"
+    intro="These placeholder panels reserve space for real Fastbooks product screenshots showing parsed purchase bills and GST/ledger hints review."
+    items={gstProofItems}
+    layout="grid"
+  />
 
   <WhatsAppCTA source="GST Accounting Software" />
 </BaseLayout>

@@ -6,6 +6,12 @@ import AnswerBlock from "../../components/AnswerBlock.astro";
 import FAQSection from "../../components/FAQSection.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+import ProductProofSection from "../../components/ProductProofSection.astro";
+import { productProofAssets } from "../../data/productProof";
+
+const tallyProofItems = productProofAssets.filter((item) =>
+  ["bank-row-to-receipt-payment-draft", "bill-photo-to-purchase-draft", "review-inbox-accountant-approval"].includes(item.id)
+);
 
 const title = "TallyPrime Alternative for Indian Businesses | Fastbooks";
 const description = "Looking for a TallyPrime alternative to reduce manual voucher entry? Fastbooks prepares sales, purchase, expense and bank drafts from everyday inputs for accountant review.";
@@ -123,6 +129,14 @@ const relatedLinks = [
       </tbody>
     </table>
   </div></section>
+
+  <ProductProofSection
+    eyebrow="Product proof"
+    title="Screens that will show how Fastbooks reduces voucher preparation work"
+    intro="These placeholder panels reserve space for real Fastbooks product screenshots showing bank statement preparation, invoice scanning, and review inbox."
+    items={tallyProofItems}
+    layout="grid"
+  />
 
   <section class="section-soft"><div class="inner">
     <div class="section-heading">

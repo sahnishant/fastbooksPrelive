@@ -7,6 +7,12 @@ import StickyWhatsAppCTA from "../components/StickyWhatsAppCTA.astro";
 import FAQSection from "../components/FAQSection.astro";
 import RelatedLinks from "../components/RelatedLinks.astro";
 import { buildWhatsAppUrl } from "../data/site";
+import ProductProofSection from "../components/ProductProofSection.astro";
+import { productProofAssets } from "../data/productProof";
+
+const homepageProofItems = productProofAssets.filter((item) =>
+  item.pageTargets.includes("homepage")
+);
 
 const faqs = [
   {
@@ -182,6 +188,14 @@ const description = "Fastbooks is a simple GST billing and accounting product fo
       </div>
     </div>
   </section>
+
+  <ProductProofSection
+    eyebrow="Product proof"
+    title="Product proof placeholders: the exact screens we need next"
+    intro="These placeholder panels reserve space for real Fastbooks product screenshots: voice note capture, bill photo parsing, bank row preparation, review inbox, GST hints and accountant approval."
+    items={homepageProofItems}
+    layout="grid"
+  />
 
   <section class="section">
     <div class="section-heading">

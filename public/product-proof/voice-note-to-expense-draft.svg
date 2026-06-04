@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f1f5f9" stroke-width="2"/>
+    </pattern>
+    <!-- Soft Shadow -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" rx="20" fill="#f8fafc" stroke="#e2e8f0" stroke-width="4"/>
+  <rect width="1200" height="800" rx="20" fill="url(#grid)" />
+
+  <!-- Mock Browser Header -->
+  <rect x="0" y="0" width="1200" height="70" rx="0" fill="#0f172a" />
+  <circle cx="30" cy="35" r="6" fill="#ef4444" />
+  <circle cx="50" cy="35" r="6" fill="#f59e0b" />
+  <circle cx="70" cy="35" r="6" fill="#10b981" />
+  <rect x="110" y="20" width="400" height="30" rx="6" fill="#1e293b" />
+  <text x="130" y="40" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">fastbooks.in/pilot/voice-note-to-draft</text>
+  <rect x="1050" y="20" width="120" height="30" rx="6" fill="#ea580c" />
+  <text x="1110" y="40" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">PILOT MODE</text>
+
+  <!-- Title / Eyebrow -->
+  <text x="600" y="140" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" text-anchor="middle">Workflow Proof: Voice Note → Expense Draft</text>
+  <text x="600" y="175" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="500" text-anchor="middle">Shows how phone voice capture generates a structured draft entry for final accountant review.</text>
+
+  <!-- Left Side: Voice Capture Box -->
+  <g transform="translate(80, 220)" filter="url(#shadow)">
+    <rect width="440" height="420" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <rect width="440" height="60" rx="16" fill="#f1f5f9" stroke="none"/>
+    <rect x="0" y="40" width="440" height="20" fill="#f1f5f9" stroke="none"/>
+    <!-- Voice Note Title -->
+    <text x="24" y="36" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700">Phone-First Input: Voice Note</text>
+    <circle cx="400" cy="30" r="10" fill="#ffedd5"/>
+    <circle cx="400" cy="30" r="4" fill="#ea580c"/>
+
+    <!-- Waveform Visual -->
+    <rect x="40" y="100" width="360" height="120" rx="12" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5" />
+    <!-- Recording Wave Lines -->
+    <path d="M 80 160 L 80 160 M 100 150 L 100 170 M 120 140 L 120 180 M 140 130 L 140 190 M 160 115 L 160 205 M 180 125 L 180 195 M 200 145 L 200 175 M 220 155 L 220 165 M 240 135 L 240 185 M 260 120 L 260 200 M 280 110 L 280 210 M 300 130 L 300 190 M 320 145 L 320 175 M 340 155 L 340 165 M 360 160 L 360 160" stroke="#ea580c" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Voice Transcript Text -->
+    <rect x="40" y="240" width="360" height="130" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="56" y="275" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" text-transform="uppercase" letter-spacing="0.05em">Voice Transcript (Auto-Generated)</text>
+    <text x="56" y="310" fill="#1e293b" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" width="320">"Buy printer paper for office, twelve</text>
+    <text x="56" y="335" fill="#1e293b" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600">hundred fifty rupees from cash account."</text>
+  </g>
+
+  <!-- Connector Arrow -->
+  <g transform="translate(540, 400)">
+    <path d="M 0 0 L 120 0 M 100 -10 L 120 0 L 100 10" fill="none" stroke="#ea580c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="25" y="-30" width="70" height="20" rx="4" fill="#ea580c" />
+    <text x="60" y="-16" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="800" text-anchor="middle">PREPARES</text>
+  </g>
+
+  <!-- Right Side: Draft Card in Accountant Review Queue -->
+  <g transform="translate(680, 220)" filter="url(#shadow)">
+    <rect width="440" height="420" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <rect width="440" height="60" rx="16" fill="#f8fafc" stroke="none"/>
+    <rect x="0" y="40" width="440" height="20" fill="#f8fafc" stroke="none"/>
+    <!-- Draft Card Title -->
+    <text x="24" y="36" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700">Fastbooks: Prepared Expense Draft</text>
+    <rect x="320" y="18" width="96" height="24" rx="6" fill="#fed7aa" />
+    <text x="368" y="34" fill="#ea580c" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="800" text-anchor="middle">NEEDS REVIEW</text>
+
+    <!-- Key-Value Rows -->
+    <g transform="translate(24, 80)">
+      <!-- Row 1: Amount -->
+      <text x="0" y="30" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">Amount</text>
+      <text x="392" y="30" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" text-anchor="end">₹1,250.00</text>
+      <line x1="0" y1="45" x2="392" y2="45" stroke="#f1f5f9" stroke-width="1.5"/>
+
+      <!-- Row 2: Account Hint -->
+      <text x="0" y="75" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">Suggested Ledger</text>
+      <text x="392" y="75" fill="#ea580c" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700" text-anchor="end">Office Stationery Expenses</text>
+      <text x="392" y="95" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="500" text-anchor="end">(Hint based on transcript text)</text>
+      <line x1="0" y1="110" x2="392" y2="110" stroke="#f1f5f9" stroke-width="1.5"/>
+
+      <!-- Row 3: Paid From -->
+      <text x="0" y="140" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">Paid From</text>
+      <text x="392" y="140" fill="#1e293b" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700" text-anchor="end">Cash Account</text>
+      <line x1="0" y1="155" x2="392" y2="155" stroke="#f1f5f9" stroke-width="1.5"/>
+
+      <!-- Row 4: Narration -->
+      <text x="0" y="185" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">Narration Hint</text>
+      <text x="392" y="185" fill="#1e293b" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" text-anchor="end">"Printer paper ₹1250 paid via cash"</text>
+      <line x1="0" y1="205" x2="392" y2="205" stroke="#f1f5f9" stroke-width="1.5"/>
+
+      <!-- Row 5: Action Button (Mocked) -->
+      <rect x="0" y="240" width="392" height="48" rx="8" fill="#10b981" />
+      <text x="196" y="269" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700" text-anchor="middle">✓ Approve &amp; Post to Books</text>
+      <text x="196" y="310" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Humans approve before final posting</text>
+    </g>
+  </g>
+
+  <!-- Footer Disclaimer -->
+  <rect x="0" y="730" width="1200" height="70" rx="0" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="2" />
+  <text x="600" y="770" fill="#475569" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700" text-anchor="middle">
+    Placeholder — replace with real Fastbooks screenshot
+  </text>
+</svg>

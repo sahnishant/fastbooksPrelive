@@ -2,6 +2,12 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
 import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+import ProductProofSection from "../../components/ProductProofSection.astro";
+import { productProofAssets } from "../../data/productProof";
+
+const whatsappProofItems = productProofAssets.filter((item) =>
+  ["voice-note-to-expense-draft", "owner-staff-accountant-flow"].includes(item.id)
+);
 
 const title = "WhatsApp Accounting App for Indian Businesses | Fastbooks";
 const description = "Fastbooks helps Indian businesses prepare accounts entries from WhatsApp-style voice notes, bill photos, receipts and bank transaction text for review.";
@@ -25,6 +31,14 @@ const description = "Fastbooks helps Indian businesses prepare accounts entries 
       <article class="card"><h3>Review inbox</h3><p>Accountants verify the entry instead of chasing missing context later.</p></article>
     </div>
   </div></section>
+
+  <ProductProofSection
+    eyebrow="Product proof"
+    title="WhatsApp-style capture proof screens to add next"
+    intro="These placeholder panels reserve space for real Fastbooks product screenshots showing voice note capture and staff-to-accountant workflow."
+    items={whatsappProofItems}
+    layout="grid"
+  />
 
   <WhatsAppCTA source="WhatsApp Accounting" />
 </BaseLayout>

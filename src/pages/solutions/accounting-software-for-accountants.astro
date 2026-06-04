@@ -2,6 +2,12 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
 import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+import ProductProofSection from "../../components/ProductProofSection.astro";
+import { productProofAssets } from "../../data/productProof";
+
+const accountantProofItems = productProofAssets.filter((item) =>
+  ["review-inbox-accountant-approval", "owner-staff-accountant-flow"].includes(item.id)
+);
 
 const title = "Accounting Software for Accountants and CA Offices | Fastbooks";
 const description = "Fastbooks helps accountants and CA offices reduce manual accounts entry work by collecting client bills, bank transactions and voice notes into review-ready drafts.";
@@ -25,6 +31,14 @@ const description = "Fastbooks helps accountants and CA offices reduce manual ac
       <article class="card"><h3>Control retained</h3><p>The accountant decides what is correct before entries are finalized.</p></article>
     </div>
   </div></section>
+
+  <ProductProofSection
+    eyebrow="Product proof"
+    title="Accountant review proof screens to add next"
+    intro="These placeholder panels reserve space for real Fastbooks product screenshots showing client-to-accountant workflow and the review inbox."
+    items={accountantProofItems}
+    layout="grid"
+  />
 
   <WhatsAppCTA source="Accounting Software for Accountants" />
 </BaseLayout>
