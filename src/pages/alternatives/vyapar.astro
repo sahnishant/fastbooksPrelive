@@ -1,0 +1,173 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQSection from "../../components/FAQSection.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+
+const title = "Vyapar Alternative for Indian Businesses | Fastbooks";
+const description = "Compare Vyapar billing software with Fastbooks' capture-first accounts entry preparation. Move from billing-only to full reviewer-ready accounting drafts.";
+
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Alternatives", href: "/alternatives/vyapar/" },
+  { name: "Vyapar Alternative", href: "/alternatives/vyapar/" }
+];
+
+const faqs = [
+  {
+    question: "Is Fastbooks better than Vyapar?",
+    answer: "Not universally. Vyapar-style tools are useful for billing and inventory-heavy shop workflows. Fastbooks is better positioned for businesses that want accounting entry preparation and accountant review from many daily inputs."
+  },
+  {
+    question: "Can Fastbooks do billing?",
+    answer: "Fastbooks is being built around GST billing and accounting workflows. The stronger differentiation is that it also prepares accounting entries from bills, receipts, bank rows, and voice notes."
+  },
+  {
+    question: "Is Fastbooks good for retailers?",
+    answer: "Yes, especially retailers who want sales, purchases, expenses, receipts, payments, bank entries, and GST hints prepared for accountant review. Avoid positioning it only as a POS/inventory tool."
+  },
+  {
+    question: "Should I switch from Vyapar immediately?",
+    answer: "No. During early access, first map your workflow: billing, purchases, bank receipts, expense capture, inventory needs, and accountant handoff. Fastbooks should be adopted where it reduces manual entry and improves review quality."
+  }
+];
+
+const relatedLinks = [
+  { label: "Bank reconciliation software", href: "/features/bank-reconciliation-software/", description: "Prepare receipt and payment drafts from bank statement text." },
+  { label: "WhatsApp accounting", href: "/features/whatsapp-accounting/", description: "Capture bills, receipts and voice notes from phone-first workflows." },
+  { label: "GST accounting software", href: "/features/gst-accounting-software/", description: "Reduce manual sales, purchase and bank entry work." },
+  { label: "Accounting software for accountants", href: "/solutions/accounting-software-for-accountants/", description: "Let clients capture context while you retain review control." },
+  { label: "Accounting software for traders", href: "/solutions/accounting-software-for-traders/", description: "Simplify daily capture and review for retail & wholesale trade." }
+];
+---
+
+<BaseLayout title={title} description={description} source="Vyapar Alternative" breadcrumbs={breadcrumbs} faqs={faqs}>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <PageHero
+    eyebrow="Vyapar alternative"
+    title="A Vyapar alternative for businesses that need more than fast billing."
+    subtitle="Vyapar is widely used for billing and basic business records. Fastbooks focuses on the next layer: turning bills, receipts, bank transactions, and voice notes into review-ready accounting entries for owners and accountants."
+    source="Vyapar Alternative"
+    secondaryHref="/features/whatsapp-accounting/"
+    secondaryLabel="See WhatsApp accounting"
+  />
+
+  <AnswerBlock
+    eyebrow="Direct answer"
+    title="Is Fastbooks a Vyapar alternative?"
+    answer="Fastbooks focuses on a different pain than Vyapar. While Vyapar is tailored for offline-first retail shop billing and inventory, Fastbooks targets the daily capture-and-review pipeline. Fastbooks converts receipts, bank transactions, bills, and voice notes into structured drafts, keeping the accountant at the centre of the approval process."
+    bullets={["Capture inputs from WhatsApp and mobile easily.", "Focuses on accounting preparation instead of just inventory billing.", "Ensures final control remains under accountant review."]}
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">The Review Angle</p>
+      <h2>Billing-first vs accounting-review-first</h2>
+      <p>Billing software helps create invoices quickly. But daily accounts work does not end at billing. Businesses still need purchase entries, expense records, bank receipts, payments, narration, party matching, GST review, and accountant approval. Fastbooks is designed around this accounting-review workflow. It does not only ask, “Can we make a bill quickly?” It asks, “Can we prepare the accounting entry from whatever proof the business has?”</p>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Workflow comparison</p>
+      <h2>Vyapar-style billing workflow vs Fastbooks accounting-preparation workflow</h2>
+    </div>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Vyapar-style billing workflow</th>
+          <th>Fastbooks preparation workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Main use case</strong></td>
+          <td>Billing, invoices, basic inventory, business records.</td>
+          <td>Accounting entry preparation from bills, receipts, bank rows, and voice notes.</td>
+        </tr>
+        <tr>
+          <td><strong>Starting point</strong></td>
+          <td>User opens app and creates bill or record.</td>
+          <td>User sends transaction proof or context, then reviews the prepared draft.</td>
+        </tr>
+        <tr>
+          <td><strong>Inventory and billing</strong></td>
+          <td>Strong fit for shop billing and inventory-led use cases.</td>
+          <td>Useful when the bigger pain is accountant-ready sales, purchase, expense, receipt, and payment preparation.</td>
+        </tr>
+        <tr>
+          <td><strong>Accountant workflow</strong></td>
+          <td>Business owner may manage records directly.</td>
+          <td>Designed so accountant/CA review remains central.</td>
+        </tr>
+        <tr>
+          <td><strong>Bank entries</strong></td>
+          <td>Bank/payment data may still need manual interpretation.</td>
+          <td>Bank rows can be turned into receipt/payment drafts with review status.</td>
+        </tr>
+        <tr>
+          <td><strong>Best fit</strong></td>
+          <td>Retailers who primarily want billing and inventory.</td>
+          <td>Businesses that want daily accounting context captured and prepared for review.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div></section>
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">When to choose</p>
+      <h2>When Fastbooks is a better fit than a billing-first app</h2>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <h3>Your accountant asks for bills later</h3>
+        <p>Fastbooks helps capture bills and receipts before they are forgotten.</p>
+      </article>
+      <article class="card">
+        <h3>Bank entries take too long</h3>
+        <p>Prepare receipt and payment drafts from transaction text or bank rows.</p>
+      </article>
+      <article class="card">
+        <h3>Staff are not trained accountants</h3>
+        <p>Staff can send context. The accountant can review accounting treatment later.</p>
+      </article>
+      <article class="card">
+        <h3>You do not want blind automation</h3>
+        <p>Fastbooks keeps uncertain entries in review instead of posting them without approval.</p>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Honest fit</p>
+      <h2>Fastbooks may not be the right fit if:</h2>
+    </div>
+    <div class="card-grid two">
+      <article class="card">
+        <h3>You need simple billing or ERP</h3>
+        <ul>
+          <li>You only need simple invoice creation.</li>
+          <li>You want a mature full-suite accounting system today.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>You want hands-off automation</h3>
+        <ul>
+          <li>You want a fully automatic posting system with no review.</li>
+          <li>Your current accounting team does not want a review-first workflow.</li>
+        </ul>
+      </article>
+    </div>
+  </div></section>
+
+  <FAQSection faqs={faqs} title="Vyapar alternative questions" />
+  <RelatedLinks links={relatedLinks} />
+  <WhatsAppCTA source="Vyapar Alternative" />
+</BaseLayout>

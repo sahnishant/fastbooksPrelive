@@ -1,0 +1,165 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQSection from "../../components/FAQSection.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import WhatsAppCTA from "../../components/WhatsAppCTA.astro";
+
+const title = "Refrens Alternative for Accounting Entry Preparation | Fastbooks";
+const description = "Looking for a Refrens alternative? Fastbooks helps prepare sales, purchase, expense and bank drafts from messy daily inputs for accountant review.";
+
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Alternatives", href: "/alternatives/tally-prime/" }, // using tally-prime as parent since it's the main alt page
+  { name: "Refrens Alternative", href: "/alternatives/refrens/" }
+];
+
+const faqs = [
+  {
+    question: "Is Fastbooks better than Refrens?",
+    answer: "Not in every case. Refrens-style tools are strong for invoicing and business workflows. Fastbooks is positioned for accounting entry preparation from everyday inputs and accountant review."
+  },
+  {
+    question: "Is Fastbooks only an invoicing tool?",
+    answer: "No. The Fastbooks direction is broader: sales, purchase, expense, bank, receipt, payment, outstanding, and GST-review draft preparation."
+  },
+  {
+    question: "Who should consider Fastbooks instead of Refrens?",
+    answer: "Businesses where daily accounts preparation is painful: many bills, receipts, bank rows, staff notes, cash expenses, and accountant follow-ups."
+  }
+];
+
+const relatedLinks = [
+  { label: "Bank reconciliation software", href: "/features/bank-reconciliation-software/", description: "Prepare receipt and payment drafts from bank statement text." },
+  { label: "WhatsApp accounting", href: "/features/whatsapp-accounting/", description: "Capture bills, receipts and voice notes from phone-first workflows." },
+  { label: "GST accounting software", href: "/features/gst-accounting-software/", description: "Reduce manual sales, purchase and bank entry work." },
+  { label: "Accounting software for accountants", href: "/solutions/accounting-software-for-accountants/", description: "Let clients capture context while you retain review control." },
+  { label: "Accounting software for traders", href: "/solutions/accounting-software-for-traders/", description: "Simplify daily capture and review for retail & wholesale trade." }
+];
+---
+
+<BaseLayout title={title} description={description} source="Refrens Alternative" breadcrumbs={breadcrumbs} faqs={faqs}>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <PageHero
+    eyebrow="Refrens alternative"
+    title="A Refrens alternative for businesses that need accounts preparation beyond invoicing."
+    subtitle="Refrens is known for invoicing, GST billing, payments, compliance, and business workflows. Fastbooks focuses on the capture layer before final accounts: bills, receipts, bank rows, and voice notes become review-ready accounting drafts."
+    source="Refrens Alternative"
+    secondaryHref="/features/whatsapp-accounting/"
+    secondaryLabel="See WhatsApp accounting"
+  />
+
+  <AnswerBlock
+    eyebrow="Direct answer"
+    title="Is Fastbooks a Refrens alternative?"
+    answer="Fastbooks covers a different workflow. While Refrens handles clean document creation (invoices, quotes, and payment gateways), Fastbooks focus on turning unstructured inputs into review-ready accounting drafts. It prepares transaction listings from bills, receipts, bank rows, or voice notes, allowing accountants to review treatment before official entry posting."
+    bullets={["Capture expenses, bank rows, and cash context on the go.", "Drafts are prepared before final document conversion.", "Ideal for teams that want review-ready entries rather than only invoicing."]}
+  />
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">The Entry Preparation Angle</p>
+      <h2>Invoicing is one part of accounts. Daily entry preparation is the harder part.</h2>
+      <p>Many businesses can create invoices. The harder work is keeping the whole accounts trail clean: purchases, expenses, receipts, payments, bank narrations, cash movements, outstanding follow-up, and GST review. Fastbooks is built for this preparation layer. It helps collect business context from everyday inputs and prepares structured drafts for accountant approval.</p>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Workflow comparison</p>
+      <h2>Refrens-style invoicing workflow vs Fastbooks entry-preparation workflow</h2>
+    </div>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Refrens-style invoicing workflow</th>
+          <th>Fastbooks entry-preparation workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Main strength</strong></td>
+          <td>Invoicing, billing, payments, compliance, and cloud business workflows.</td>
+          <td>Accounting entry preparation from everyday business inputs.</td>
+        </tr>
+        <tr>
+          <td><strong>Starting point</strong></td>
+          <td>Create or manage invoices and business documents.</td>
+          <td>Send bill photos, receipts, bank rows, or voice notes.</td>
+        </tr>
+        <tr>
+          <td><strong>Accounts preparation</strong></td>
+          <td>Accounting features are tied to structured business documents.</td>
+          <td>Draft entries can start from messy real-world inputs before they become clean records.</td>
+        </tr>
+        <tr>
+          <td><strong>Service-business fit</strong></td>
+          <td>Strong fit for invoicing-led service and professional businesses.</td>
+          <td>Strong fit where the problem is daily capture, accountant review, and manual entry reduction.</td>
+        </tr>
+        <tr>
+          <td><strong>Review philosophy</strong></td>
+          <td>Workflow depends on how the business manages records.</td>
+          <td>AI prepares; accountant/human approves.</td>
+        </tr>
+        <tr>
+          <td><strong>Best fit</strong></td>
+          <td>Businesses wanting a polished invoicing and compliance suite.</td>
+          <td>Businesses wanting a capture-first review inbox for accounting drafts.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div></section>
+
+  <section class="section-soft"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Frictionless Flow</p>
+      <h2>How Fastbooks addresses the messy first mile</h2>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <h3>When Refrens-style invoicing is enough</h3>
+        <p>If your main need is creating polished invoices, quotations, and payment records, an invoicing-led tool may work well.</p>
+      </article>
+      <article class="card">
+        <h3>When Fastbooks is the sharper fit</h3>
+        <p>If your staff sends bills on WhatsApp, expenses are remembered later, and bank narrations need accountant interpretation, Fastbooks targets that workflow directly.</p>
+      </article>
+      <article class="card">
+        <h3>Built for accountant review</h3>
+        <p>Fastbooks does not need to pretend that every AI suggestion is correct. It should prepare drafts and show uncertainty clearly.</p>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="inner">
+    <div class="section-heading">
+      <p class="eyebrow">Honest fit</p>
+      <h2>Fastbooks may not be the right fit if:</h2>
+    </div>
+    <div class="card-grid two">
+      <article class="card">
+        <h3>You need simple billing or ERP</h3>
+        <ul>
+          <li>You only need simple invoice creation.</li>
+          <li>You want a mature full-suite accounting system today.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>You want hands-off automation</h3>
+        <ul>
+          <li>You want a fully automatic posting system with no review.</li>
+          <li>Your current accounting team does not want a review-first workflow.</li>
+        </ul>
+      </article>
+    </div>
+  </div></section>
+
+  <FAQSection faqs={faqs} title="Refrens alternative questions" />
+  <RelatedLinks links={relatedLinks} />
+  <WhatsAppCTA source="Refrens Alternative" />
+</BaseLayout>
